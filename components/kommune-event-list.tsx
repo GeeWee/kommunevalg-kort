@@ -20,9 +20,11 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = (props
     });
 
     const rows = eventsSortedByDate.map(event => {
+        // TODO do much better link validation here.
         let moreInfoTd = <td/>
         if (event.moreInfoLink){
-            moreInfoTd = <td><a href={event.moreInfoLink}>{event.moreInfoLink}</a></td>
+            //not sure
+            moreInfoTd = <td><a href={event.moreInfoLink}>https://{event.moreInfoLink}</a></td>
         }
 
 
