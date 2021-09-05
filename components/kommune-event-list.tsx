@@ -1,50 +1,17 @@
 import _ from 'lodash';
 import {DateTime, Duration} from 'luxon';
 import {FunctionComponent} from 'react';
+import {KommuneEvent} from "../types"
 
 export interface KommuneEventListProps {
-
+    events: KommuneEvent[]
 }
 
 export const KommuneEventList: FunctionComponent<KommuneEventListProps> = (props) => {
-    // TODO get events in as props
-    const events = [
-        {
-            name: 'Stor demo 1 (old)',
-            kommune: 'Den sejeste kommune',
-            place: "Online",
-            description: 'blabla',
-            moreInformation: 'www.google.com',
-            date: DateTime.now().minus({days: 2})
-        },
-        {
-            name: 'Stor demo 2 (old)',
-            kommune: 'Den sejeste kommune',
-            place: "Online",
-            description: 'blabla',
-            moreInformation: 'www.google.com',
-            date: DateTime.now().minus({days: 1})
-        },
-        {
-            name: 'Stor demo 4 (new)',
-            kommune: 'Den sejeste kommune',
-            place: "Online",
-            description: 'blabla',
-            moreInformation: 'www.google.com',
-            date: DateTime.now().plus({days: 8})
-        },
-        {
-            name: 'Stor demo 3 (new)',
-            kommune: 'Den sejeste kommune',
-            place: "Online",
-            description: 'blabla',
-            moreInformation: 'www.google.com',
-            date: DateTime.now().plus({days: 3})
-        },
-    ]
 
+    // TODO style
     // TODO is this the right filtering? We show events from yesterday as well.
-    const eventsNotOlderThanOneDay = events.filter(event => {
+    const eventsNotOlderThanOneDay = props.events.filter(event => {
         return event.date >= DateTime.now().minus({days: 1}).startOf("day");
     })
 
@@ -59,10 +26,9 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = (props
             <td>{event.name}</td>
             <td>{event.place}</td>
             <td>{event.description}</td>
-            <td>{event.moreInformation}</td>
+            <td>{event.moreInfoLink}</td>
         </tr>
     })
-
 
     return (
         <div>
