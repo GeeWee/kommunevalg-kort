@@ -21,6 +21,10 @@ jobs:
           yarn next build
           yarn next export
 
+      - name: Remove jekyll processing
+        run: |
+          - cd out && touch ".nojekyll"
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         if: ${{ github.event_name == 'push' }}
