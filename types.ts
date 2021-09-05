@@ -100,8 +100,9 @@ export type KommuneName = 'Albertslund' |
     'Aabenraa';
 
 
-interface Event {
-    time: DateTime,
+export interface KommuneEvent {
+    date: DateTime,
+    time: string,
     name: string,
     kommune: KommuneName,
     place: string,
