@@ -22,8 +22,7 @@ jobs:
           yarn next export
 
       - name: Remove jekyll processing
-        run: |
-          - cd out && touch ".nojekyll"
+        run: cd out && touch ".nojekyll"
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
