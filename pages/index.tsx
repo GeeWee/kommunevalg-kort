@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/table.module.css'
 import {KommuneCombobox} from "../components/kommune-combobox";
 import {KommuneName} from "../types";
 import {useState} from "react";
