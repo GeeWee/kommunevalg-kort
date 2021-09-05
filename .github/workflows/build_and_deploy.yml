@@ -1,8 +1,9 @@
-name: Build and Deploy
+name: Build
 
 on:
   push:
     branches: main
+  pull_request:
 
 jobs:
   build-and-deploy:
@@ -22,6 +23,7 @@ jobs:
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
+        if: ${{ github.event_name == 'push' }}
         with:
           branch: gh-pages
           folder: out
