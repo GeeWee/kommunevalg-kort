@@ -16,6 +16,7 @@ export default {
 const eventProps: KommuneEvent[] = [
   {
     name: 'Stor demo 1 (old)',
+    time: "12:30",
     kommune: 'Aalborg',
     place: "Online",
     description: 'blabla',
@@ -25,6 +26,7 @@ const eventProps: KommuneEvent[] = [
   {
     name: 'Stor demo 2 (old)',
     kommune: 'Aalborg',
+    time: "12:30",
     place: "Online",
     description: 'blabla',
     moreInfoLink: 'www.google.com',
@@ -33,6 +35,7 @@ const eventProps: KommuneEvent[] = [
   {
     name: 'Stor demo 4 (new)',
     kommune: 'Aalborg',
+    time: "12:30",
     place: "Online",
     description: 'blabla',
     moreInfoLink: 'www.google.com',
@@ -41,6 +44,7 @@ const eventProps: KommuneEvent[] = [
   {
     name: 'Stor demo 3 (new)',
     kommune: 'Aalborg',
+    time: "12:30",
     place: "Online",
     description: 'blabla',
     moreInfoLink: 'www.google.com',
