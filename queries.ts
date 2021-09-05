@@ -2,6 +2,30 @@ import axios from "axios";
 import {KommuneEvent, KommuneGroup, KommuneName} from "./types";
 import {DateTime} from "luxon";
 import {Begivenhed, Gruppe} from "./sheets-types";
+import {useQuery} from "react-query";
+
+
+export function useKommuneEvents(kommuneName: KommuneName): KommuneEvent[] | undefined {
+    const eventQuery = useQuery('events', getEvents)
+    if (eventQuery.data){
+        return eventQuery.data.filter(event => {
+            return event.kommune === kommuneName
+        });
+    }
+    return undefined;
+}
+
+export function useKommuneGroups(kommuneName: KommuneName): KommuneGroup[] | undefined{
+    const groupsQuery = useQuery('groups', getGroups)
+    if (groupsQuery.data){
+        return groupsQuery.data.filter(group => {
+            return group.kommune === kommuneName
+        });
+    }
+    return undefined;
+}
+
+
 
 export async function getEvents(): Promise<KommuneEvent[]>{
     const values = await axios.get<Begivenhed[]>("https://script.google.com/macros/s/AKfycbzboDHSRLhg7ILtaPq9u_cZLm-isnLD0O913RX74hvicF05wLgHVzKBrnNHptW8zio_/exec?path=Begivenheder", {

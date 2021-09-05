@@ -1,9 +1,7 @@
 ## Link til Google Sheets
 
-Sheet med grupper:
-https://docs.google.com/spreadsheets/d/1jTI7n-p2uYvV_UMt2pzkMq62SWio2FGKUbzVKY1NcJM/edit?usp=sharing
 
-Sheet med begivenheder:
+Sheet med begivenheder & grupper:
 https://docs.google.com/spreadsheets/d/1M-lQqkZMJoN5_8_6JrvsEEEunDX4GFYA0yQGHx3zenQ/edit?usp=sharing
 
 ## --

@@ -5,36 +5,29 @@ import {KommuneEventList} from "./kommune-event-list";
 import {DateTime} from "luxon";
 import axios from 'axios';
 import {useQuery} from "react-query";
-import {getEvents, getGroups} from "../queries";
+import {getEvents, getGroups, useKommuneEvents, useKommuneGroups} from "../queries";
 
 export interface KommuneOverviewProps {
     name: KommuneName
 }
 
 export const KommuneOverview: FunctionComponent<KommuneOverviewProps> = (props) => {
-    const eventQuery = useQuery('events', getEvents)
-    const groupsQuery = useQuery('events', getGroups)
+    const events = useKommuneEvents(props.name);
+    const groups = useKommuneGroups(props.name);
 
-    // TODO filter on kommune for data
-
+    // todo error handling
     // TODO empty state
-    let eventList;
-    if (eventQuery.isSuccess){
-        console.log(eventQuery.data);
-        eventList = <KommuneEventList events={eventQuery.data}>
+    let eventList = <div></div>;
+    if (events !== undefined){
+        eventList = <KommuneEventList events={events}>
         </KommuneEventList>
-    } else {
-        eventList = <div></div>;
     }
 
     // TODO empty state
-    let groupList;
-    if (groupsQuery.isSuccess){
-        console.log(groupsQuery.data);
-        groupList = <KommuneGroupList groups={groupsQuery.data}>
+    let groupList = <div></div>;
+    if (groups !== undefined){
+        groupList = <KommuneGroupList groups={groups}>
         </KommuneGroupList>
-    } else {
-        groupList = <div></div>;
     }
 
     return (
