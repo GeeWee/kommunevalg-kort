@@ -1,3 +1,9 @@
+## Link til Google Sheet
+
+https://docs.google.com/spreadsheets/d/1jTI7n-p2uYvV_UMt2pzkMq62SWio2FGKUbzVKY1NcJM/edit?usp=sharing
+
+## --
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
