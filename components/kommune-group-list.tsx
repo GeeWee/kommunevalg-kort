@@ -2,11 +2,11 @@ import _ from 'lodash';
 import {DateTime, Duration} from 'luxon';
 import {FunctionComponent} from 'react';
 
-export interface KommuneEventListProps {
+export interface KommuneGroupList {
 
 }
 
-export const KommuneEventList: FunctionComponent<KommuneEventListProps> = (props) => {
+export const KommuneGroupList: FunctionComponent<KommuneGroupList> = (props) => {
     // TODO get events in as props
     const events = [
         {
@@ -56,7 +56,7 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = (props
 
     return (
         <div>
-            <h1>Begivenheder</h1>
+            <h1>Grupper</h1>
             <pre>
             {
                 JSON.stringify(eventsSortedByDate, null, 2)
