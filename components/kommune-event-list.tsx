@@ -24,7 +24,7 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = (props
         let moreInfoTd = <td/>
         if (event.moreInfoLink){
             //not sure
-            moreInfoTd = <td><a href={event.moreInfoLink}>https://{event.moreInfoLink}</a></td>
+            moreInfoTd = <td><a href={`https://${event.moreInfoLink}`}>https://{event.moreInfoLink}</a></td>
         }
 
 
