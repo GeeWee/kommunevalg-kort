@@ -3,25 +3,7 @@ import { google, sheets_v4 } from 'googleapis';
 import _ from 'lodash';
 import { DateTime } from 'luxon';
 import { KommuneName, KommuneEvent, KommuneGroup } from '../types';
-
-interface Begivenhed {
-    Dato       : string,
-    Tidspunkt  : string, 
-    Begivenhed : string,
-    Kommune    : string, 
-    Sted       : string,
-    Info       : string,
-    Link       : string
-}
-
-interface Gruppe {
-    Kommune : string,
-    Gruppenavn : string,
-    Kontaktperson : string,
-    Beskrivelse : string,
-    Møder : string,
-    Lokation : string
-}
+import {Begivenhed, Gruppe} from "../sheets-types";
 
 describe('Sheets integration integration tests', () => {
     it('Fetching data from Begivenheder sheet', async () => {
