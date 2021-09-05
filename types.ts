@@ -1,3 +1,5 @@
+import {DateTime} from "luxon";
+
 export type KommuneName = 'Albertslund' |
     'Allerød' |
     'Ballerup' |
@@ -96,3 +98,13 @@ export type KommuneName = 'Albertslund' |
     'Vejle' |
     'Ærø' |
     'Aabenraa';
+
+
+interface Event {
+    time: DateTime,
+    name: string,
+    kommune: KommuneName,
+    place: string,
+    description: string,
+    moreInfoLink: string,
+}
