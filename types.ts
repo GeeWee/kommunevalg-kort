@@ -109,3 +109,12 @@ export interface KommuneEvent {
     description: string,
     moreInfoLink: string,
 }
+
+export interface KommuneGroup {
+    person: string,
+    groupName: string,
+    kommune: KommuneName,
+    description: string,
+    meetings: string,
+    location: string
+}
