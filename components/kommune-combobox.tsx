@@ -40,23 +40,11 @@ export const KommuneCombobox: FunctionComponent<KommuneComboboxProps> = (props) 
             options={options}
             // Page-unique id to prepend in front of react-select https://github.com/JedWatson/react-select/issues/2629
             instanceId={props.instanceId}
-            // we're not interested in an indicator seperator
-            // eslint-disable-next-line unicorn/no-null
-            components={{ DropdownIndicator, IndicatorSeparator: () => null }}
-            placeholder={'Search...'}
+            placeholder={'Søg efter kommune'}
         />
     );
 };
 
-// Custom dropdown indicator to display icon
-const DropdownIndicator = (props: any) => {
-    return (
-        <components.DropdownIndicator {...props}>
-            {/*todo insert hourglass icon instead of 'Q' here*/}
-            <p className={'m-0'}>Q</p>
-        </components.DropdownIndicator>
-    );
-};
 
 // // Style object for React-select
 // const styles: Styles<any, false> = {
