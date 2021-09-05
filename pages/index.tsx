@@ -31,7 +31,6 @@ const Home: NextPage = () => {
 
       <main>
         <KommuneCombobox value={kommune} onChange={setKommune} instanceId={"sdfsfsd"}/>
-
         {content}
       </main>
 
