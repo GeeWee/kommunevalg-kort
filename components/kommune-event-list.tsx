@@ -53,15 +53,34 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = (props
         return event.date
     });
 
+    const rows = eventsSortedByDate.map(event => {
+        return <tr>
+            <td>{event.date.toHTTP()}</td>
+            <td>{event.name}</td>
+            <td>{event.place}</td>
+            <td>{event.description}</td>
+            <td>{event.moreInformation}</td>
+        </tr>
+    })
+
 
     return (
         <div>
             <h1>Begivenheder</h1>
-            <pre>
-            {
-                JSON.stringify(eventsSortedByDate, null, 2)
-            }
-            </pre>
+            <table>
+                <thead>
+                <tr>
+                    <th>Tidspunkt</th>
+                    <th>Begivenhed</th>
+                    <th>Sted</th>
+                    <th>Beskrivelse</th>
+                    <th>Mere info</th>
+                </tr>
+                </thead>
+                <tbody>
+                {rows}
+                </tbody>
+            </table>
         </div>
     )
 };
