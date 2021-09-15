@@ -4,11 +4,11 @@ import {FunctionComponent} from 'react';
 import {KommuneEvent} from "../types"
 import tableStyles from "../styles/table.module.css";
 
-export interface KommuneEventListProps {
+export interface AllKommunerEventListProps {
     events: KommuneEvent[]
 }
 
-export const AllKommunerEventsList: FunctionComponent<KommuneEventListProps> = ({events}) => {
+export const AllKommunerEventsList: FunctionComponent<AllKommunerEventListProps> = ({events}) => {
     // TODO is this the right filtering? We show events from yesterday as well.
     const eventsNotOlderThanOneDay = events.filter(event => {
         return event.date >= DateTime.now().minus({days: 1}).startOf("day");
