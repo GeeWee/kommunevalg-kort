@@ -1,17 +1,20 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
 import {KommuneCombobox} from "../components/kommune-combobox";
-import {KommuneName} from "../types";
+import {GlobalEvent, KommuneName} from "../types";
 import {useState} from "react";
 import {KommuneOverview} from "../components/kommune-overview";
 import {useAllEvents, useKommuneEvents} from "../queries";
 import {KommuneEventList} from "../components/kommune-event-list";
+import {AllKommunerEventsList} from "../components/all-kommuner-event-list";
 
 const Home: NextPage = () => {
     const [kommune, setKommune] = useState<KommuneName | undefined>(undefined);
 
-    const globalEvents = useKommuneEvents("Aarhus"); // TODO change to "landsdækkende"
-    const allEvents = useAllEvents()?.slice(0, 10);
+    const globalEvents = useKommuneEvents("Landsdækkende");
+    const allEvents = useAllEvents()
+        ?.filter(event => event.kommune !== "Landsdækkende")
+        ?.slice(0, 10);
 
 
     let content;
@@ -39,9 +42,7 @@ const Home: NextPage = () => {
 
                     <div>
                         <h1>Kommende begivenheder i alle kommuner</h1>
-                        {allEvents && <KommuneEventList events={allEvents} endRow={<tr>
-                            <td colSpan={999} className={"text-center"}>Og mange flere...</td>
-                        </tr>}/>}
+                        {allEvents && <AllKommunerEventsList events={allEvents} />}
                     </div>
 
                     <div>

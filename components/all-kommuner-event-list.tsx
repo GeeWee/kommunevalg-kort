@@ -8,12 +8,11 @@ export interface KommuneEventListProps {
     events: KommuneEvent[]
 }
 
-export const KommuneEventList: FunctionComponent<KommuneEventListProps> = ({events}) => {
+export const AllKommunerEventsList: FunctionComponent<KommuneEventListProps> = ({events}) => {
     // TODO is this the right filtering? We show events from yesterday as well.
     const eventsNotOlderThanOneDay = events.filter(event => {
         return event.date >= DateTime.now().minus({days: 1}).startOf("day");
     })
-
 
     const eventsSortedByDate = _.sortBy(eventsNotOlderThanOneDay, event => {
         return event.date
@@ -31,6 +30,7 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = ({even
         return <tr key={index}>
             <td>{event.date.toLocaleString()}</td>
             <td>{event.name}</td>
+            <td>{event.kommune}</td>
             <td>{event.place}</td>
             <td>{event.description}</td>
             {moreInfoTd}
@@ -44,6 +44,7 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = ({even
                 <tr>
                     <th>Tidspunkt</th>
                     <th>Begivenhed</th>
+                    <th>Kommune</th>
                     <th>Sted</th>
                     <th>Beskrivelse</th>
                     <th>Mere information</th>
@@ -51,6 +52,9 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = ({even
                 </thead>
                 <tbody>
                 {rows}
+                <tr>
+                    <td colSpan={999} className={"text-center"}>Og mange flere...</td>
+                </tr>
                 </tbody>
             </table>
         </div>
