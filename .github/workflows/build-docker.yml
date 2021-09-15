@@ -19,7 +19,7 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
-          registry: rg.fr-par.scw.cloud
+          registry: rg.fr-par.scw.cloud/funcscwklimabevaegelsenssq3zxqs
           username: nologin
           password: ${{ secrets.SCW_ACCESS_KEY }}
 
