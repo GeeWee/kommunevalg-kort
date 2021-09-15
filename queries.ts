@@ -1,11 +1,18 @@
 import axios from "axios";
-import {KommuneEvent, KommuneGroup, KommuneName} from "./types";
+import {GlobalEvent, KommuneEvent, KommuneGroup, KommuneName} from "./types";
 import {DateTime} from "luxon";
 import {Begivenhed, Gruppe} from "./sheets-types";
 import {useQuery} from "react-query";
 
+export function useAllEvents(): KommuneEvent[] | undefined {
+    const eventQuery = useQuery('events', getEvents)
+    if (eventQuery.data){
+        return eventQuery.data;
+    }
+    return undefined;
+}
 
-export function useKommuneEvents(kommuneName: KommuneName): KommuneEvent[] | undefined {
+export function useKommuneEvents(kommuneName: KommuneName | GlobalEvent): KommuneEvent[] | undefined {
     const eventQuery = useQuery('events', getEvents)
     if (eventQuery.data){
         return eventQuery.data.filter(event => {

@@ -22,7 +22,6 @@ export const KommuneGroupList: FunctionComponent<KommuneGroupList> = (props) => 
 
     return (
         <div>
-            <h1>Grupper</h1>
             <table className={tableStyles.table}>
                 <thead>
                 <tr>

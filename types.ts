@@ -99,12 +99,14 @@ export type KommuneName = 'Albertslund' |
     'Ærø' |
     'Aabenraa';
 
+export type GlobalEvent = "Landsdækkende";
+
 
 export interface KommuneEvent {
     date: DateTime,
     time: string,
     name: string,
-    kommune: KommuneName,
+    kommune: KommuneName | GlobalEvent,
     place: string,
     description: string,
     moreInfoLink: string,
