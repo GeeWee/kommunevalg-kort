@@ -28,6 +28,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: funcscwklimabevaegelsenssq3zxqs/app:latest
+          tags: rg.fr-par.scw.cloud/funcscwklimabevaegelsenssq3zxqs/app:latest
           cache-from: type=registry,ref=funcscwklimabevaegelsenssq3zxqs/app:latest
           cache-to: type=inline
