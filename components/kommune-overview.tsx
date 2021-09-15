@@ -34,9 +34,11 @@ export const KommuneOverview: FunctionComponent<KommuneOverviewProps> = (props) 
         <div>
             <h1>{props.name}</h1>
             <div>
+                <h1>Grupper</h1>
                 {groupList}
             </div>
             <div>
+                <h1>Begivenheder</h1>
                 {eventList}
             </div>
         </div>

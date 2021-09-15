@@ -39,7 +39,6 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = (props
 
     return (
         <div>
-            <h1>Begivenheder</h1>
             <table className={tableStyles.table}>
                 <thead>
                 <tr>

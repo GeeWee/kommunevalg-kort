@@ -4,6 +4,13 @@ import {DateTime} from "luxon";
 import {Begivenhed, Gruppe} from "./sheets-types";
 import {useQuery} from "react-query";
 
+export function useAllEvents(): KommuneEvent[] | undefined {
+    const eventQuery = useQuery('events', getEvents)
+    if (eventQuery.data){
+        return eventQuery.data;
+    }
+    return undefined;
+}
 
 export function useKommuneEvents(kommuneName: KommuneName): KommuneEvent[] | undefined {
     const eventQuery = useQuery('events', getEvents)
