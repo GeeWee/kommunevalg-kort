@@ -28,6 +28,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: user/app:latest
-          cache-from: type=registry,ref=user/app:latest
+          tags: funcscwklimabevaegelsenssq3zxqs/app:latest
+          cache-from: type=registry,ref=funcscwklimabevaegelsenssq3zxqs/app:latest
           cache-to: type=inline
