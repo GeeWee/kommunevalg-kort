@@ -19,7 +19,7 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
-          registry: rg.fr-par.scw.cloud/funcscwklimabevaegelsenssq3zxqs
+          registry: rg.nl-ams.scw.cloud/mycoolregistry123
           username: nologin
           password: ${{ secrets.SCW_ACCESS_KEY }}
 
@@ -28,6 +28,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: rg.fr-par.scw.cloud/funcscwklimabevaegelsenssq3zxqs/app:latest
+          tags: rg.nl-ams.scw.cloud/mycoolregistry123/app:latest
           cache-from: type=registry,ref=funcscwklimabevaegelsenssq3zxqs/app:latest
           cache-to: type=inline
