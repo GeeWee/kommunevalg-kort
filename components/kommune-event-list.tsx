@@ -6,11 +6,12 @@ import tableStyles from "../styles/table.module.css";
 
 export interface KommuneEventListProps {
     events: KommuneEvent[]
+    endRow?: JSX.Element;
 }
 
-export const KommuneEventList: FunctionComponent<KommuneEventListProps> = (props) => {
+export const KommuneEventList: FunctionComponent<KommuneEventListProps> = ({events, endRow = undefined}) => {
     // TODO is this the right filtering? We show events from yesterday as well.
-    const eventsNotOlderThanOneDay = props.events.filter(event => {
+    const eventsNotOlderThanOneDay = events.filter(event => {
         return event.date >= DateTime.now().minus({days: 1}).startOf("day");
     })
 
@@ -29,7 +30,7 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = (props
 
 
         return <tr key={index}>
-            <td>{event.date.toHTTP()}</td>
+            <td>{event.date.toLocaleString()}</td>
             <td>{event.name}</td>
             <td>{event.place}</td>
             <td>{event.description}</td>
@@ -51,6 +52,7 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = (props
                 </thead>
                 <tbody>
                 {rows}
+                {endRow}
                 </tbody>
             </table>
         </div>

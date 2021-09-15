@@ -11,7 +11,7 @@ const Home: NextPage = () => {
     const [kommune, setKommune] = useState<KommuneName | undefined>(undefined);
 
     const globalEvents = useKommuneEvents("Aarhus"); // TODO change to "landsdækkende"
-    const allEvents = useAllEvents();
+    const allEvents = useAllEvents()?.slice(0, 10);
 
 
     let content;
@@ -39,7 +39,9 @@ const Home: NextPage = () => {
 
                     <div>
                         <h1>Kommende begivenheder i alle kommuner</h1>
-                        {allEvents && <KommuneEventList events={allEvents}/>}
+                        {allEvents && <KommuneEventList events={allEvents} endRow={<tr>
+                            <td colSpan={999} className={"text-center"}>Og mange flere...</td>
+                        </tr>}/>}
                     </div>
 
                     <div>
