@@ -21,7 +21,6 @@ export const KommuneCombobox: FunctionComponent<KommuneComboboxProps> = (props) 
         props.onChange(selected?.value ?? undefined);
     };
 
-    // eslint-disable-next-line unicorn/no-null -- react-select demands null not undefined
     let value: HasLabelAndValue<KommuneName> | null = null!;
     if (props.value !== undefined) {
         value = giveLabelAndValue(props.value);

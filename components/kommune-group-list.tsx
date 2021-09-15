@@ -9,9 +9,9 @@ export interface KommuneGroupList {
 }
 
 export const KommuneGroupList: FunctionComponent<KommuneGroupList> = (props) => {
-    const rows = props.groups.map(group => {
+    const rows = props.groups.map((group, index) => {
 
-        return <tr>
+        return <tr key={index}>
             <td>{group.groupName}</td>
             <td>{group.description}</td>
             <td>{group.location}</td>

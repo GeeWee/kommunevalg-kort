@@ -19,7 +19,7 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = (props
         return event.date
     });
 
-    const rows = eventsSortedByDate.map(event => {
+    const rows = eventsSortedByDate.map((event, index) => {
         // TODO do much better link validation here.
         let moreInfoTd = <td/>
         if (event.moreInfoLink){
@@ -28,7 +28,7 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = (props
         }
 
 
-        return <tr>
+        return <tr key={index}>
             <td>{event.date.toHTTP()}</td>
             <td>{event.name}</td>
             <td>{event.place}</td>
