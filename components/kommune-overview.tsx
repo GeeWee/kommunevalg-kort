@@ -16,7 +16,7 @@ export const KommuneOverview: FunctionComponent<KommuneOverviewProps> = (props) 
     const groups = useKommuneGroups(props.name);
 
     // todo error handling
-    // TODO empty state
+    // TODO loading state
     let eventList = <div></div>;
     if (kommuneEvents !== undefined && globalEvents !== undefined) {
         const hasKommuneEvents = kommuneEvents.length !== 0;
@@ -33,7 +33,8 @@ export const KommuneOverview: FunctionComponent<KommuneOverviewProps> = (props) 
         </>
     }
 
-    // TODO empty state
+    // TODO loading state
+    // TODO error handling
     let groupList = <div></div>;
     if (groups !== undefined) {
         groupList = <KommuneGroupList groups={groups}>
