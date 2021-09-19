@@ -49,7 +49,7 @@ export async function getEvents(): Promise<KommuneEvent[]>{
     })
     console.log(values.data)
     const transformed : KommuneEvent[] = values.data.map( ( begivenhed ) => {
-        return { date : DateTime.fromISO(begivenhed.Dato),// begivenhed.Dato, //todo convert to datetime
+        return { date : DateTime.fromISO(begivenhed.Dato),
             time : begivenhed.Tidspunkt,
             name : begivenhed.Begivenhed,
             kommune : begivenhed.Kommune as KommuneName,
