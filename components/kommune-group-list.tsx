@@ -1,8 +1,11 @@
 import _ from 'lodash';
 import {DateTime, Duration} from 'luxon';
 import {FunctionComponent} from 'react';
-import {KommuneGroup} from "../types";
+import {KommuneEvent, KommuneGroup} from "../types";
 import tableStyles from "../styles/table.module.scss";
+import {convertLinkToFullFledged} from "../utils/link-validation-utils";
+import {useWindowSize} from "@react-hook/window-size";
+import {SMALL_SCREEN_BREAKPOINT} from "../utils/constants";
 
 export interface KommuneGroupList {
     groups: KommuneGroup[]
@@ -18,9 +21,19 @@ export const KommuneGroupList: FunctionComponent<KommuneGroupList> = (props) => 
         </div>
     }
 
+    const [width, height] = useWindowSize()
 
-    const rows = props.groups.map((group, index) => {
+    if (width < SMALL_SCREEN_BREAKPOINT) {
+        return renderCards(props.groups);
+    } else {
+        return renderTable(props.groups);
+    }
 
+
+};
+
+function renderTable(groups: KommuneGroup[]){
+    const rows = groups.map((group, index) => {
         return <tr key={index}>
             <td>{group.groupName}</td>
             <td>{group.description}</td>
@@ -48,4 +61,30 @@ export const KommuneGroupList: FunctionComponent<KommuneGroupList> = (props) => 
             </table>
         </div>
     )
-};
+}
+
+function renderCards(groups: KommuneGroup[]) {
+    const cards = groups.map((group, index) => {
+
+        return <div key={index} className="card my-2">
+            <div className="card-body">
+                <h5 className="card-title">{group.groupName}</h5>
+                <h6 className="card-subtitle mb-2">
+                    Mødes: {group.meetings}<br/>
+                    Lokation: {group.location}
+
+                </h6>
+                <div className="card-text">
+                    <p>
+                    {group.description}
+                    </p>
+                    <div className={"fw-bolder"}>Kontaktperson:</div> {group.person}
+                </div>
+            </div>
+        </div>
+    })
+
+    return <div>
+        {cards}
+    </div>
+}
