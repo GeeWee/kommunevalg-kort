@@ -2,7 +2,7 @@ import _ from 'lodash';
 import {DateTime, Duration} from 'luxon';
 import {FunctionComponent} from 'react';
 import {KommuneGroup} from "../types";
-import tableStyles from "../styles/table.module.css";
+import tableStyles from "../styles/table.module.scss";
 
 export interface KommuneGroupList {
     groups: KommuneGroup[]
