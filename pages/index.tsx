@@ -7,6 +7,7 @@ import {KommuneOverview} from "../components/kommune-overview";
 import {useAllEvents, useAllGroups, useKommuneEvents} from "../queries";
 import {AllKommunerEventsList} from "../components/all-kommuner-event-list";
 import Script from 'next/script'
+import {GlobalEventList} from "../components/global-event-list";
 
 const Home: NextPage = () => {
     const [kommune, setKommune] = useState<KommuneName | undefined>(undefined);
@@ -15,7 +16,6 @@ const Home: NextPage = () => {
     const allGroupsUnused = useAllGroups(); // To fetch the data so we cache it for later.
     const globalEvents = useKommuneEvents("Landsdækkende");
     const allEvents = useAllEvents()
-        ?.filter(event => event.kommune !== "Landsdækkende")
         ?.slice(0, 10);
 
 
@@ -43,7 +43,7 @@ const Home: NextPage = () => {
                 <div className="card-content p-2">
                     <div className={"mb-4"}>
                         <h2 className="text-center">Landsdækkende begivenheder</h2>
-                        {globalEvents && <AllKommunerEventsList events={globalEvents}/>}
+                        {globalEvents && <GlobalEventList events={globalEvents}/>}
                     </div>
 
 
