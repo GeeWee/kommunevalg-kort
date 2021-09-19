@@ -1,31 +1,41 @@
 import {FunctionComponent} from 'react';
-import {KommuneEvent, KommuneName} from "../types";
+import {KommuneName} from "../types";
 import {KommuneGroupList} from "./kommune-group-list";
 import {KommuneEventList} from "./kommune-event-list";
-import {DateTime} from "luxon";
-import axios from 'axios';
-import {useQuery} from "react-query";
-import {getEvents, getGroups, useKommuneEvents, useKommuneGroups} from "../queries";
+import {useKommuneEvents, useKommuneGroups} from "../queries";
 
 export interface KommuneOverviewProps {
     name: KommuneName
 }
 
 export const KommuneOverview: FunctionComponent<KommuneOverviewProps> = (props) => {
-    const events = useKommuneEvents(props.name);
+    const kommuneEvents = useKommuneEvents(props.name);
+    const globalEvents = useKommuneEvents("Landsdækkende");
+
+
     const groups = useKommuneGroups(props.name);
 
     // todo error handling
     // TODO empty state
     let eventList = <div></div>;
-    if (events !== undefined){
-        eventList = <KommuneEventList events={events}>
-        </KommuneEventList>
+    if (kommuneEvents !== undefined && globalEvents !== undefined) {
+        const hasKommuneEvents = kommuneEvents.length !== 0;
+        eventList = <>
+            {!hasKommuneEvents && <p>
+                Vi har ikke nogen lokale events i din kommune lige nu.
+                Vi foreslår du deltager i en af de landsdækkende begivenheder nedenunder.
+                Hvis du har mod på at lave et event eller du gerne vil af vide når der kommer events, så kan du <a
+                href="https://www.klimabevaegelsen.dk/kommunalvalg">tilmelde dig Klimabevægelsens Kampagnehold.</a>
+            </p>
+            }
+            <KommuneEventList events={[...globalEvents, ...kommuneEvents]}>
+            </KommuneEventList>
+        </>
     }
 
     // TODO empty state
     let groupList = <div></div>;
-    if (groups !== undefined){
+    if (groups !== undefined) {
         groupList = <KommuneGroupList groups={groups}>
         </KommuneGroupList>
     }
@@ -43,4 +53,5 @@ export const KommuneOverview: FunctionComponent<KommuneOverviewProps> = (props) 
             </div>
         </div>
     )
-};
+}
+;

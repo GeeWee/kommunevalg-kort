@@ -16,7 +16,7 @@ export function useKommuneEvents(kommuneName: KommuneName | GlobalEvent): Kommun
     const eventQuery = useQuery('events', getEvents)
     if (eventQuery.data){
         return eventQuery.data.filter(event => {
-            return event.kommune === kommuneName || event.kommune
+            return event.kommune === kommuneName
         });
     }
     return undefined;

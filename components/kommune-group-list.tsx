@@ -14,7 +14,7 @@ export const KommuneGroupList: FunctionComponent<KommuneGroupList> = (props) => 
         return <div>
             Vi har pt. ikke information om nogle lokale grupper i din kommune.
             Hvis du er med i en gruppe som ikke står her, eller du gerne vil være med til at starte en gruppe så kan du <a
-            href="https://www.klimabevaegelsen.dk/kommunalvalg">tilmelde dig Klimabevægelsens Kampagnehold</a>
+            href="https://www.klimabevaegelsen.dk/kommunalvalg">tilmelde dig Klimabevægelsens Kampagnehold.</a>
         </div>
     }
 

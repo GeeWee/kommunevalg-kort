@@ -30,6 +30,7 @@
   color: revert;
 }
 
+/*ugly as fuck but just a placeholder for now*/
 .globalEventRow {
-  background-color: greenyellow;
+  background-color: greenyellow !important;
 }
