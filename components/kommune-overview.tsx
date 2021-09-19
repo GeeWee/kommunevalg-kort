@@ -52,6 +52,10 @@ export const KommuneOverview: FunctionComponent<KommuneOverviewProps> = (props) 
                 <h1>Begivenheder</h1>
                 {eventList}
             </div>
+            <p>
+                Vil du gerne holdes opdateret omkring når der sker noget nyt i din kommune? Meld dig til <a href="https://www.klimabevaegelsen.dk/kommunalvalg">Klimabevægelsens Kampagnehold.</a>
+
+        </p>
         </div>
     )
 }
