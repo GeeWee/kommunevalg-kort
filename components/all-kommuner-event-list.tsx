@@ -3,6 +3,7 @@ import {DateTime, Duration} from 'luxon';
 import {FunctionComponent} from 'react';
 import {KommuneEvent} from "../types"
 import tableStyles from "../styles/table.module.css";
+import {convertLinkToFullFledged} from "../utils/link-validation-utils";
 
 export interface AllKommunerEventListProps {
     events: KommuneEvent[]
@@ -19,11 +20,9 @@ export const AllKommunerEventsList: FunctionComponent<AllKommunerEventListProps>
     });
 
     const rows = eventsSortedByDate.map((event, index) => {
-        // TODO do much better link validation here.
         let moreInfoTd = <td/>
         if (event.moreInfoLink){
-            //not sure
-            moreInfoTd = <td><a href={`https://${event.moreInfoLink}`}>https://{event.moreInfoLink}</a></td>
+            moreInfoTd = <td><a href={convertLinkToFullFledged(event.moreInfoLink)}>{event.moreInfoLink}</a></td>
         }
 
 
