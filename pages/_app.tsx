@@ -1,6 +1,7 @@
 import '../styles/globals.scss'
 import type {AppProps} from 'next/app'
 import {QueryClient, QueryClientProvider} from "react-query";
+import 'bootstrap/dist/css/bootstrap.css'
 
 const queryClient = new QueryClient()
 
