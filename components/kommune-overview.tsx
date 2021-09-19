@@ -24,8 +24,6 @@ export const KommuneOverview: FunctionComponent<KommuneOverviewProps> = (props) 
             {!hasKommuneEvents && <p>
                 Vi har ikke nogen lokale events i din kommune lige nu.
                 Vi foreslår du deltager i en af de landsdækkende begivenheder nedenunder.
-                Hvis du har mod på at lave et event eller du gerne vil af vide når der kommer events, så kan du <a
-                href="https://www.klimabevaegelsen.dk/kommunalvalg">tilmelde dig Klimabevægelsens Kampagnehold.</a>
             </p>
             }
             <KommuneEventList events={[...globalEvents, ...kommuneEvents]}>
@@ -44,7 +42,7 @@ export const KommuneOverview: FunctionComponent<KommuneOverviewProps> = (props) 
     return (
         <div>
             <div className={"mb-3"}>
-                <h2>Grupper i {props.name}</h2>
+                <h2 className={"text-center"}>Grupper i {props.name}</h2>
                 {groupList}
             </div>
             <div>

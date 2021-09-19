@@ -37,7 +37,7 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <main className={"card"}>
-                <div className="card-header mb-2 background-primary">
+                <div className="card-header mb-2 background-primary sticky-header">
                     <h1 className="text-center">Klima-begivenheder nær dig</h1>
                 </div>
                 <div className="card-content p-2">
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
 
 
                     <div>
-                        <h2 className="text-center">Se events og lokalgrupper i din kommune</h2>
+                        <h2 className="text-center">Se begivenheder og lokalgrupper i din kommune</h2>
                         <KommuneCombobox value={kommune} onChange={setKommune} instanceId={"sdfsfsd"}/>
                     </div>
 

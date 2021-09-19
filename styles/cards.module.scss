@@ -1,0 +1,11 @@
+@import 'klimabevaegelsen.scss';
+
+
+.blueHeader {
+    background-color: $color-1b;
+    color: $color-1c;
+
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 0;
+    }
+}

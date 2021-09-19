@@ -3,10 +3,12 @@ import {DateTime, Duration} from 'luxon';
 import {FunctionComponent} from 'react';
 import {KommuneEvent} from "../types"
 import {convertLinkToFullFledged} from "../utils/link-validation-utils";
+import cardStyles from "../styles/cards.module.scss";
 
 import tableStyles from "../styles/table.module.scss";
 import {useWindowSize} from '@react-hook/window-size';
 import {SMALL_SCREEN_BREAKPOINT} from "../utils/constants";
+import {KommuneEventCard} from "./event-card";
 
 export interface AllKommunerEventListProps {
     events: KommuneEvent[]
@@ -75,26 +77,7 @@ function renderTable(eventsSortedByDate: KommuneEvent[]) {
 
 function renderCards(eventsSortedByDate: KommuneEvent[]) {
     const cards = eventsSortedByDate.map((event, index) => {
-        let moreInfoLink = null;
-        if (event.moreInfoLink) {
-            moreInfoLink = <a href={convertLinkToFullFledged(event.moreInfoLink)}>{event.moreInfoLink}</a>
-        }
-
-        return <div key={index} className="card my-2">
-            <div className="card-body">
-                <h5 className="card-title">{event.name}</h5>
-                <h6 className="card-subtitle mb-2">
-                    Dato: {event.date.toLocaleString()} <br/>
-                    {event.kommune} kommune <br/>
-                    Sted: {event.place}
-                </h6>
-                <p className="card-text">
-                    {event.description}
-                    <br/>
-                    {moreInfoLink && <div>Mere info: {moreInfoLink}</div>}
-                </p>
-            </div>
-        </div>
+        return <KommuneEventCard kommuneEvent={event} key={index} />
     })
 
     return <div>
