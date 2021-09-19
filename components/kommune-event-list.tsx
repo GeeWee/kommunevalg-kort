@@ -34,10 +34,6 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = ({even
             [tableStyles.globalEventRow]: isGlobal
         })
 
-        console.log(tableStyles);
-
-        console.log(event.kommune, rowClasses, tableStyles.globalEventRow);
-
         return <tr key={index} className={rowClasses}>
             <td>{event.date.toLocaleString()}</td>
             <td>{event.name}</td>
