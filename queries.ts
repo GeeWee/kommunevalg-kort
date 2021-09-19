@@ -32,6 +32,13 @@ export function useKommuneGroups(kommuneName: KommuneName): KommuneGroup[] | und
     return undefined;
 }
 
+export function useAllGroups(): KommuneGroup[] | undefined{
+    const groupsQuery = useQuery('groups', getGroups)
+    if (groupsQuery.data){
+        return groupsQuery.data;
+    }
+    return undefined;
+}
 
 
 export async function getEvents(): Promise<KommuneEvent[]>{

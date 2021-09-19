@@ -4,13 +4,15 @@ import {KommuneCombobox} from "../components/kommune-combobox";
 import {GlobalEvent, KommuneName} from "../types";
 import {useState} from "react";
 import {KommuneOverview} from "../components/kommune-overview";
-import {useAllEvents, useKommuneEvents} from "../queries";
+import {useAllEvents, useAllGroups, useKommuneEvents} from "../queries";
 import {KommuneEventList} from "../components/kommune-event-list";
 import {AllKommunerEventsList} from "../components/all-kommuner-event-list";
 
 const Home: NextPage = () => {
     const [kommune, setKommune] = useState<KommuneName | undefined>(undefined);
 
+    // noinspection JSUnusedLocalSymbols
+    const allGroupsUnused = useAllGroups(); // To fetch the data so we cache it for later.
     const globalEvents = useKommuneEvents("Landsdækkende");
     const allEvents = useAllEvents()
         ?.filter(event => event.kommune !== "Landsdækkende")
