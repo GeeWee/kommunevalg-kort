@@ -26,11 +26,11 @@ export const KommuneEventCard: FunctionComponent<KommuneEventCardProps> = ({komm
                 {kommuneString} <br/>
                 Sted: {kommuneEvent.place}
             </h6>
-            <p className="card-text">
+            <div className="card-text">
                 {kommuneEvent.description}
                 <br/>
-                {moreInfoLink && <div>Mere info: {moreInfoLink}</div>}
-            </p>
+                {moreInfoLink && <span>Mere info: {moreInfoLink}</span>}
+            </div>
         </div>
     </div>
 };
