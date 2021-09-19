@@ -39,7 +39,7 @@ const Home: NextPage = () => {
                 <>
                     <div>
                         <h1>Kommende landsdækkende begivenheder</h1>
-                        {globalEvents && <KommuneEventList events={globalEvents}/>}
+                        {globalEvents && <AllKommunerEventsList events={globalEvents}/>}
                     </div>
 
                     <div>

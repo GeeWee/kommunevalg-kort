@@ -29,3 +29,7 @@
 .table a {
   color: revert;
 }
+
+.globalEventRow {
+  background-color: greenyellow;
+}
