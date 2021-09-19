@@ -1,12 +1,12 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
 import {KommuneCombobox} from "../components/kommune-combobox";
-import {GlobalEvent, KommuneName} from "../types";
+import {KommuneName} from "../types";
 import {useState} from "react";
 import {KommuneOverview} from "../components/kommune-overview";
 import {useAllEvents, useAllGroups, useKommuneEvents} from "../queries";
-import {KommuneEventList} from "../components/kommune-event-list";
 import {AllKommunerEventsList} from "../components/all-kommuner-event-list";
+import Script from 'next/script'
 
 const Home: NextPage = () => {
     const [kommune, setKommune] = useState<KommuneName | undefined>(undefined);
@@ -64,8 +64,12 @@ const Home: NextPage = () => {
                 </div>
             </main>
 
+            <Script
+                src="/iframeResizer.contentWindow.min.js"
+                strategy="beforeInteractive"
+            />
         </>
     )
 }
 
-export default Home
+export default Home;
