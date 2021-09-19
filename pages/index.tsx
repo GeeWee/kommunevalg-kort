@@ -19,11 +19,11 @@ const Home: NextPage = () => {
         ?.slice(0, 10);
 
 
-    let content;
+    let kommuneSpecificContent;
     if (kommune === undefined) {
-        content = null;
+        kommuneSpecificContent = null;
     } else {
-        content = <KommuneOverview name={kommune}>
+        kommuneSpecificContent = <KommuneOverview name={kommune}>
 
         </KommuneOverview>
     }
@@ -43,17 +43,18 @@ const Home: NextPage = () => {
                     </div>
 
                     <div>
-                        <h1>Kommende begivenheder i alle kommuner</h1>
-                        {allEvents && <AllKommunerEventsList events={allEvents} />}
-                    </div>
-
-                    <div>
                         <h1>Se events og lokalgrupper i din kommune</h1>
                         <KommuneCombobox value={kommune} onChange={setKommune} instanceId={"sdfsfsd"}/>
                     </div>
+
+                    {kommuneSpecificContent}
+
+                    <div>
+                        <h1>Kommende begivenheder i alle kommuner</h1>
+                        {allEvents && <AllKommunerEventsList events={allEvents} />}
+                    </div>
                 </>
 
-                {content}
             </main>
 
         </div>
