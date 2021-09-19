@@ -43,13 +43,12 @@ export const KommuneOverview: FunctionComponent<KommuneOverviewProps> = (props) 
 
     return (
         <div>
-            <h1>{props.name}</h1>
-            <div>
-                <h1>Grupper</h1>
+            <div className={"mb-3"}>
+                <h2>Grupper i {props.name}</h2>
                 {groupList}
             </div>
             <div>
-                <h1>Begivenheder</h1>
+                <h2>Begivenheder i {props.name}</h2>
                 {eventList}
             </div>
             <p>

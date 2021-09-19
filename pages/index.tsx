@@ -29,7 +29,7 @@ const Home: NextPage = () => {
     }
 
     return (
-        <div>
+        <>
             <Head>
                 <title>Klimabevægelsens kort</title>
                 <meta name="description" content="En liste over begivenheder og grupper til klimabevægelsens kommunalvalg 2021."/>
@@ -37,27 +37,32 @@ const Home: NextPage = () => {
             </Head>
             <main>
                 <>
-                    <div>
-                        <h1>Kommende landsdækkende begivenheder</h1>
+                    <div className={"mb-4"}>
+                        <h1 className="text-center">Klima-begivenheder nær dig</h1>
+                        <h2 className="text-center">Landsdækkende begivenheder</h2>
                         {globalEvents && <AllKommunerEventsList events={globalEvents}/>}
                     </div>
 
+
+
                     <div>
-                        <h1>Se events og lokalgrupper i din kommune</h1>
+                        <h2 className="text-center">Se events og lokalgrupper i din kommune</h2>
                         <KommuneCombobox value={kommune} onChange={setKommune} instanceId={"sdfsfsd"}/>
                     </div>
 
+                    <div className={"mb-3 mt-3"}>
                     {kommuneSpecificContent}
+                    </div>
 
                     <div>
-                        <h1>Kommende begivenheder i alle kommuner</h1>
+                        <h2>Kommende begivenheder i alle kommuner</h2>
                         {allEvents && <AllKommunerEventsList events={allEvents} />}
                     </div>
                 </>
 
             </main>
 
-        </div>
+        </>
     )
 }
 
