@@ -2,8 +2,9 @@ import _ from 'lodash';
 import {DateTime, Duration} from 'luxon';
 import {FunctionComponent} from 'react';
 import {KommuneEvent} from "../types"
-import tableStyles from "../styles/table.module.css";
 import {convertLinkToFullFledged} from "../utils/link-validation-utils";
+
+import tableStyles from "../styles/table.module.scss";
 
 export interface AllKommunerEventListProps {
     events: KommuneEvent[]

@@ -2,9 +2,10 @@ import _ from 'lodash';
 import {DateTime, Duration} from 'luxon';
 import {FunctionComponent} from 'react';
 import {KommuneEvent} from "../types"
-import tableStyles from "../styles/table.module.css";
 import {convertLinkToFullFledged} from "../utils/link-validation-utils";
 import classNames from "classnames";
+
+import tableStyles from "../styles/table.module.scss";
 
 export interface KommuneEventListProps {
     events: KommuneEvent[]
@@ -31,7 +32,7 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = ({even
         }
 
         const rowClasses = classNames({
-            [tableStyles.globalEventRow]: isGlobal
+            [tableStyles.globalEvent]: isGlobal
         })
 
         return <tr key={index} className={rowClasses}>

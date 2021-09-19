@@ -1,0 +1,52 @@
+@import 'klimabevaegelsen.scss';
+
+.table {
+  @include klimabevaegelsen-style;
+
+  border-collapse: collapse;
+  width: 100%;
+
+  // header
+  th {
+      background-color: $color-1b;
+
+      padding-top: 12px;
+      padding-bottom: 12px;
+
+      text-align: left;
+      font-weight: $font-weight-bold;
+
+      color: $color-1c;
+  }
+
+  // cell borders
+  td, th {
+      border: 1px solid $color-1b;
+      padding: 8px;
+  }
+
+  // rows
+  tr {
+      &:nth-child(even) { background-color: $color-2a; }
+
+      &:hover { background-color: $color-complement-green-c; }
+
+      &.globalEvent:not(:hover) {
+          background-color: $color-complement-green-a;
+          &:nth-child(even) {
+              background-color: $color-complement-green-b;
+          }
+
+          a {
+              color: $color-complement-blue-c;
+              &:hover {
+                  color: $color-complement-blue-d;
+              }
+          }
+      }
+  }
+
+  td {
+      white-space: pre-wrap;
+  }
+}

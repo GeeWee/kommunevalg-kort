@@ -1,0 +1,49 @@
+// Color Palette: Primary
+$color-1a: #0F81E8;
+$color-1b: #006493;
+$color-1c: #FFFFFF;
+$color-1d: #1D2022;
+
+// Color Palette: Secondary
+$color-2a: #E9F4FD;
+$color-2b: #237BA0;
+$color-2c: #000000;
+
+// Color Palette: Complimentary
+$color-complement-blue-a: #237BA0;
+$color-complement-blue-b: #1A98DF;
+$color-complement-blue-c: #006493;
+$color-complement-blue-d: #13273b;
+$color-complement-green-a: #98B9AB;
+$color-complement-green-b: #9BC995;
+$color-complement-green-c: #E7F1F1;
+$color-complement-black: #171717;
+
+// Text font weight
+$font-weight-bold: 600;
+$font-weight-medium: 550;
+$font-weight-regular: 400;
+
+// Text style
+@mixin klimabevaegelsen-style {
+    // Background
+    background-color: $color-1c;
+
+    // Text
+    font-family: "Inter", "Arial";
+    color: $color-1d;
+    font-weight: $font-weight-regular;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: $font-weight-bold;
+    }
+
+    a {
+        color: $color-complement-blue-b;
+        text-decoration: none;
+
+        &:visited {
+            color: $color-complement-blue-c;
+        }
+    }
+}
