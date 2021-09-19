@@ -30,7 +30,7 @@ $font-weight-regular: 400;
     background-color: $color-1c;
 
     // Text
-    font-family: "Inter", "Arial";
+    font-family: "Inter", "Arial", "sans-serif";
     color: $color-1d;
     font-weight: $font-weight-regular;
 
@@ -40,7 +40,6 @@ $font-weight-regular: 400;
 
     a {
         color: $color-complement-blue-b;
-        text-decoration: none;
 
         &:visited {
             color: $color-complement-blue-c;

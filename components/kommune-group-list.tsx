@@ -6,6 +6,7 @@ import tableStyles from "../styles/table.module.scss";
 import {convertLinkToFullFledged} from "../utils/link-validation-utils";
 import {useWindowSize} from "@react-hook/window-size";
 import {SMALL_SCREEN_BREAKPOINT} from "../utils/constants";
+import cardStyles from "../styles/cards.module.scss";
 
 export interface KommuneGroupList {
     groups: KommuneGroup[]
@@ -67,8 +68,10 @@ function renderCards(groups: KommuneGroup[]) {
     const cards = groups.map((group, index) => {
 
         return <div key={index} className="card my-2">
-            <div className="card-body">
+            <div className={`card-header ${cardStyles.blueHeader}`}>
                 <h5 className="card-title">{group.groupName}</h5>
+            </div>
+            <div className="card-body">
                 <h6 className="card-subtitle mb-2">
                     Mødes: {group.meetings}<br/>
                     Lokation: {group.location}

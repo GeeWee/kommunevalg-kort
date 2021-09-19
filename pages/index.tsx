@@ -29,35 +29,42 @@ const Home: NextPage = () => {
     }
 
     return (
-        <div>
+        <>
             <Head>
                 <title>Klimabevægelsens kort</title>
-                <meta name="description" content="En liste over begivenheder og grupper til klimabevægelsens kommunalvalg 2021."/>
+                <meta name="description"
+                      content="En liste over begivenheder og grupper til klimabevægelsens kommunalvalg 2021."/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <main>
-                <>
-                    <div>
-                        <h1>Kommende landsdækkende begivenheder</h1>
+            <main className={"card"}>
+                <div className="card-header mb-2 background-primary sticky-header">
+                    <h1 className="text-center">Klima-begivenheder nær dig</h1>
+                </div>
+                <div className="card-content p-2">
+                    <div className={"mb-4"}>
+                        <h2 className="text-center">Landsdækkende begivenheder</h2>
                         {globalEvents && <AllKommunerEventsList events={globalEvents}/>}
                     </div>
 
+
                     <div>
-                        <h1>Se events og lokalgrupper i din kommune</h1>
+                        <h2 className="text-center">Se begivenheder og lokalgrupper i din kommune</h2>
                         <KommuneCombobox value={kommune} onChange={setKommune} instanceId={"sdfsfsd"}/>
                     </div>
 
-                    {kommuneSpecificContent}
+                    <div className={"mb-3 mt-3"}>
+                        {kommuneSpecificContent}
+                    </div>
 
                     <div>
-                        <h1>Kommende begivenheder i alle kommuner</h1>
-                        {allEvents && <AllKommunerEventsList events={allEvents} />}
+                        <h2 className="text-center">Kommende begivenheder i alle kommuner</h2>
+                        {allEvents && <AllKommunerEventsList events={allEvents}/>}
                     </div>
-                </>
 
+                </div>
             </main>
 
-        </div>
+        </>
     )
 }
 
