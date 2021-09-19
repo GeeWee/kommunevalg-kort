@@ -48,7 +48,7 @@ export const KommuneOverview: FunctionComponent<KommuneOverviewProps> = (props) 
                 {groupList}
             </div>
             <div>
-                <h2>Begivenheder i {props.name}</h2>
+                <h2 className="text-center">Begivenheder i {props.name}</h2>
                 {eventList}
             </div>
             <p>

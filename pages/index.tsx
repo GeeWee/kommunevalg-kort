@@ -32,17 +32,19 @@ const Home: NextPage = () => {
         <>
             <Head>
                 <title>Klimabevægelsens kort</title>
-                <meta name="description" content="En liste over begivenheder og grupper til klimabevægelsens kommunalvalg 2021."/>
+                <meta name="description"
+                      content="En liste over begivenheder og grupper til klimabevægelsens kommunalvalg 2021."/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <main>
-                <>
+            <main className={"card"}>
+                <div className="card-header mb-2 background-primary">
+                    <h1 className="text-center">Klima-begivenheder nær dig</h1>
+                </div>
+                <div className="card-content p-2">
                     <div className={"mb-4"}>
-                        <h1 className="text-center">Klima-begivenheder nær dig</h1>
                         <h2 className="text-center">Landsdækkende begivenheder</h2>
                         {globalEvents && <AllKommunerEventsList events={globalEvents}/>}
                     </div>
-
 
 
                     <div>
@@ -51,15 +53,15 @@ const Home: NextPage = () => {
                     </div>
 
                     <div className={"mb-3 mt-3"}>
-                    {kommuneSpecificContent}
+                        {kommuneSpecificContent}
                     </div>
 
                     <div>
-                        <h2>Kommende begivenheder i alle kommuner</h2>
-                        {allEvents && <AllKommunerEventsList events={allEvents} />}
+                        <h2 className="text-center">Kommende begivenheder i alle kommuner</h2>
+                        {allEvents && <AllKommunerEventsList events={allEvents}/>}
                     </div>
-                </>
 
+                </div>
             </main>
 
         </>
