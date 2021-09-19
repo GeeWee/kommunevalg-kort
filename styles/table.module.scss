@@ -1,7 +1,6 @@
 @import 'klimabevaegelsen.scss';
 
 .table {
-  // TODO apply this globally
   @include klimabevaegelsen-style;
 
   border-collapse: collapse;
