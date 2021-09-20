@@ -36,7 +36,7 @@ const Home: NextPage = () => {
                       content="En liste over begivenheder og grupper til klimabevægelsens kommunalvalg 2021."/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <main className={"card"}>
+            <main className={"card fat-card-border"}>
                 <div className="card-header mb-2 background-primary sticky-header">
                     <h1 className="text-center">Klima-begivenheder nær dig</h1>
                 </div>

@@ -39,7 +39,7 @@ function renderTable(eventsSortedByDate: KommuneEvent[]) {
     const rows = eventsSortedByDate.map((event, index) => {
         let moreInfoTd = <td/>
         if (event.moreInfoLink) {
-            moreInfoTd = <td><a href={convertLinkToFullFledged(event.moreInfoLink)}>{event.moreInfoLink}</a></td>
+            moreInfoTd = <td><a href={convertLinkToFullFledged(event.moreInfoLink)} target="_top">{event.moreInfoLink}</a></td>
         }
         return <tr key={index}>
             <td>{event.date.toLocaleString()}</td>

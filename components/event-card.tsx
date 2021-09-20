@@ -10,7 +10,7 @@ export interface KommuneEventCardProps {
 export const KommuneEventCard: FunctionComponent<KommuneEventCardProps> = ({kommuneEvent}) => {
     let moreInfoLink = null;
     if (kommuneEvent.moreInfoLink) {
-        moreInfoLink = <a href={convertLinkToFullFledged(kommuneEvent.moreInfoLink)}>{kommuneEvent.moreInfoLink}</a>
+        moreInfoLink = <a href={convertLinkToFullFledged(kommuneEvent.moreInfoLink)} target="_top">{kommuneEvent.moreInfoLink}</a>
     }
 
     const isGlobal = kommuneEvent.kommune === "Landsdækkende";

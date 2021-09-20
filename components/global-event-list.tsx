@@ -41,7 +41,7 @@ function renderTable(eventsSortedByDate: KommuneEvent[]) {
         if (event.moreInfoLink) {
             //not sure
             moreInfoTd =
-                <td><a href={convertLinkToFullFledged(event.moreInfoLink)}>https://{event.moreInfoLink}</a></td>
+                <td><a href={convertLinkToFullFledged(event.moreInfoLink)} target="_top">https://{event.moreInfoLink}</a></td>
         }
 
 
