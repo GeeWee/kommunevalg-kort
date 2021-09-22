@@ -19,7 +19,6 @@ const eventProps: KommuneEvent[] = [
     time: "12:30",
     kommune: 'Aalborg',
     place: "Online",
-    description: 'blabla',
     moreInfoLink: 'www.google.com',
     date: DateTime.now().minus({days: 2})
   },
@@ -28,7 +27,6 @@ const eventProps: KommuneEvent[] = [
     kommune: 'Aalborg',
     time: "12:30",
     place: "Online",
-    description: 'blabla',
     moreInfoLink: 'www.google.com',
     date: DateTime.now().minus({days: 1})
   },
@@ -37,7 +35,6 @@ const eventProps: KommuneEvent[] = [
     kommune: 'Aalborg',
     time: "12:30",
     place: "Online",
-    description: 'blabla',
     moreInfoLink: 'www.google.com',
     date: DateTime.now().plus({days: 8})
   },
@@ -46,7 +43,6 @@ const eventProps: KommuneEvent[] = [
     kommune: 'Aalborg',
     time: "12:30",
     place: "Online",
-    description: 'blabla',
     moreInfoLink: 'www.google.com',
     date: DateTime.now().plus({days: 3})
   },
