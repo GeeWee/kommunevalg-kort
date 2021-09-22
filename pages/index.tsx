@@ -8,6 +8,7 @@ import {AllKommunerEventsList} from "../components/all-kommuner-event-list";
 import Script from 'next/script'
 import {KommuneEventList} from "../components/kommune-event-list";
 import {KommuneGroupList} from "../components/kommune-group-list";
+import {SignUpLink} from "../components/sign-up-link";
 
 const Home: NextPage = () => {
     const [kommune, setKommune] = useState<KommuneName | undefined>(undefined);
@@ -77,8 +78,7 @@ const Home: NextPage = () => {
                             {groupList}
 
                             <p>
-                                Vil du gerne holdes opdateret omkring når der sker noget nyt i din kommune? Meld dig til <a
-                                href="https://www.klimabevaegelsen.dk/kommunalvalg" target="_top">Klimabevægelsens Kampagnehold.</a>
+                                Vil du gerne holdes opdateret omkring når der sker noget nyt i din kommune? Meld dig til <SignUpLink>Klimabevægelsens Kampagnehold.</SignUpLink>
                             </p>
                         </div>
                     </div>

@@ -7,6 +7,7 @@ import {convertLinkToFullFledged} from "../utils/link-validation-utils";
 import {useWindowSize} from "@react-hook/window-size";
 import {SMALL_SCREEN_BREAKPOINT} from "../utils/constants";
 import cardStyles from "../styles/cards.module.scss";
+import {SignUpLink} from "./sign-up-link";
 
 export interface KommuneGroupList {
     groups: KommuneGroup[]
@@ -17,8 +18,8 @@ export const KommuneGroupList: FunctionComponent<KommuneGroupList> = (props) => 
     if (props.groups.length === 0){
         return <div>
             Vi har pt. ikke information om nogle lokale grupper i din kommune.
-            Hvis du er med i en gruppe som ikke står her, eller du gerne vil være med til at starte en gruppe så kan du <a
-            href="https://www.klimabevaegelsen.dk/kommunalvalg">tilmelde dig Klimabevægelsens Kampagnehold.</a>
+            Hvis du er med i en gruppe som ikke står her, eller du gerne vil være med til at starte en gruppe så kan du
+            <SignUpLink>tilmelde dig Klimabevægelsens Kampagnehold.</SignUpLink>
         </div>
     }
 
