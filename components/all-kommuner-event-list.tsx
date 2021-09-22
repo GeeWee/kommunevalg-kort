@@ -46,7 +46,6 @@ function renderTable(eventsSortedByDate: KommuneEvent[]) {
             <td>{event.name}</td>
             <td>{event.kommune}</td>
             <td>{event.place}</td>
-            <td>{event.description}</td>
             {moreInfoTd}
         </tr>
     })
@@ -60,7 +59,6 @@ function renderTable(eventsSortedByDate: KommuneEvent[]) {
                     <th>Begivenhed</th>
                     <th>Kommune</th>
                     <th>Sted</th>
-                    <th>Beskrivelse</th>
                     <th>Mere information</th>
                 </tr>
                 </thead>

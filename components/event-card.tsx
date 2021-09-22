@@ -27,8 +27,6 @@ export const KommuneEventCard: FunctionComponent<KommuneEventCardProps> = ({komm
                 Sted: {kommuneEvent.place}
             </h6>
             <div className="card-text">
-                {kommuneEvent.description}
-                <br/>
                 {moreInfoLink && <span>Mere info: {moreInfoLink}</span>}
             </div>
         </div>
