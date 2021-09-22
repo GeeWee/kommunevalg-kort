@@ -14,7 +14,7 @@ export const KommuneEventCard: FunctionComponent<KommuneEventCardProps> = ({komm
     }
 
     const isGlobal = kommuneEvent.kommune === "Landsdækkende";
-    const kommuneString = isGlobal ? "Landsdækkende kommuneEvent" : `${kommuneEvent.kommune} kommune`
+    const kommuneString = isGlobal ? "Landsdækkende begivenhed" : `${kommuneEvent.kommune} kommune`
 
     return <div className="card my-2">
         <div className={`card-header ${cardStyles.blueHeader}`}>
