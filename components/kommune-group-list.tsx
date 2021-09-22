@@ -14,6 +14,8 @@ export interface KommuneGroupList {
 }
 
 export const KommuneGroupList: FunctionComponent<KommuneGroupList> = (props) => {
+    const [width, height] = useWindowSize()
+
     // Empty state for groups
     if (props.groups.length === 0){
         return <div>
@@ -22,8 +24,6 @@ export const KommuneGroupList: FunctionComponent<KommuneGroupList> = (props) => 
             <SignUpLink>tilmelde dig Klimabevægelsens Kampagnehold.</SignUpLink>
         </div>
     }
-
-    const [width, height] = useWindowSize()
 
     if (width < SMALL_SCREEN_BREAKPOINT) {
         return renderCards(props.groups);
