@@ -3,11 +3,11 @@ import Head from 'next/head'
 import {KommuneCombobox} from "../components/kommune-combobox";
 import {KommuneName} from "../types";
 import {useState} from "react";
-import {KommuneOverview} from "../components/kommune-overview";
-import {useAllEvents, useAllGroups, useKommuneEvents} from "../queries";
+import {useAllEvents, useAllGroups, useKommuneEvents, useKommuneGroups} from "../queries";
 import {AllKommunerEventsList} from "../components/all-kommuner-event-list";
 import Script from 'next/script'
-import {GlobalEventList} from "../components/global-event-list";
+import {KommuneEventList} from "../components/kommune-event-list";
+import {KommuneGroupList} from "../components/kommune-group-list";
 
 const Home: NextPage = () => {
     const [kommune, setKommune] = useState<KommuneName | undefined>(undefined);
@@ -18,15 +18,36 @@ const Home: NextPage = () => {
     const allEvents = useAllEvents()
         ?.slice(0, 10);
 
+    const kommuneEvents = useKommuneEvents(kommune);
 
-    let kommuneSpecificContent;
-    if (kommune === undefined) {
-        kommuneSpecificContent = null;
-    } else {
-        kommuneSpecificContent = <KommuneOverview name={kommune}>
+    const groups = useKommuneGroups(kommune);
 
-        </KommuneOverview>
+    // todo error handling
+    // TODO loading state
+    let eventList = <div/>;
+    if (kommuneEvents !== undefined || globalEvents !== undefined) {
+        const hasKommuneEvents = kommuneEvents?.length !== 0;
+        eventList = <>
+            <KommuneEventList events={[...globalEvents || [], ...kommuneEvents || []]}/>
+            {!hasKommuneEvents && <p>Vi har ikke nogen lokale events i din kommune lige nu.
+                Vi foreslår du deltager i en af de landsdækkende begivenheder ovenfor.</p>}
+        </>
     }
+
+    // TODO loading state
+    // TODO error handling
+    let groupList = <div/>;
+    if (groups !== undefined) {
+        groupList = (<div>
+            <div className={"my-3"}>
+                <h2 className={"text-center"}>Grupper i {kommune}</h2>
+                <KommuneGroupList groups={groups}>
+                </KommuneGroupList>
+            </div>
+        </div>);
+    }
+
+
 
     return (
         <>
@@ -41,11 +62,6 @@ const Home: NextPage = () => {
                     <h1 className="text-center">Klima-begivenheder nær dig</h1>
                 </div>
                 <div className="card-content p-2">
-                    <div className={"mb-4"}>
-                        <h2 className="text-center">Landsdækkende begivenheder</h2>
-                        {globalEvents && <GlobalEventList events={globalEvents}/>}
-                    </div>
-
 
                     <div>
                         <h2 className="text-center">Se begivenheder og lokalgrupper i din kommune</h2>
@@ -53,7 +69,18 @@ const Home: NextPage = () => {
                     </div>
 
                     <div className={"mb-3 mt-3"}>
-                        {kommuneSpecificContent}
+                        <div>
+                            <div>
+                                {eventList}
+                            </div>
+
+                            {groupList}
+
+                            <p>
+                                Vil du gerne holdes opdateret omkring når der sker noget nyt i din kommune? Meld dig til <a
+                                href="https://www.klimabevaegelsen.dk/kommunalvalg" target="_top">Klimabevægelsens Kampagnehold.</a>
+                            </p>
+                        </div>
                     </div>
 
                     <div>

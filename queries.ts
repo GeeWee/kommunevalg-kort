@@ -12,18 +12,26 @@ export function useAllEvents(): KommuneEvent[] | undefined {
     return undefined;
 }
 
-export function useKommuneEvents(kommuneName: KommuneName | GlobalEvent): KommuneEvent[] | undefined {
-    const eventQuery = useQuery('events', getEvents)
+export function useKommuneEvents(kommuneName: KommuneName | GlobalEvent | undefined): KommuneEvent[] | undefined {
+    const eventQuery = useQuery('events', getEvents);
+    if (kommuneName === undefined){
+        return;
+    }
     if (eventQuery.data){
         return eventQuery.data.filter(event => {
             return event.kommune === kommuneName
         });
     }
-    return undefined;
+    return;
 }
 
-export function useKommuneGroups(kommuneName: KommuneName): KommuneGroup[] | undefined{
+export function useKommuneGroups(kommuneName: KommuneName | undefined): KommuneGroup[] | undefined{
     const groupsQuery = useQuery('groups', getGroups)
+
+    if (kommuneName === undefined){
+        return;
+    }
+
     if (groupsQuery.data){
         return groupsQuery.data.filter(group => {
             return group.kommune === kommuneName
