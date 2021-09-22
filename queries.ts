@@ -54,7 +54,6 @@ export async function getEvents(): Promise<KommuneEvent[]>{
             name : begivenhed.Begivenhed,
             kommune : begivenhed.Kommune as KommuneName,
             place : begivenhed.Sted,
-            description : begivenhed.Info,
             moreInfoLink : begivenhed.Link
         }
     })

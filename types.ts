@@ -108,7 +108,6 @@ export interface KommuneEvent {
     name: string,
     kommune: KommuneName | GlobalEvent,
     place: string,
-    description: string,
     moreInfoLink: string,
 }
 

@@ -40,43 +40,38 @@ export const KommuneCombobox: FunctionComponent<KommuneComboboxProps> = (props) 
             // Page-unique id to prepend in front of react-select https://github.com/JedWatson/react-select/issues/2629
             instanceId={props.instanceId}
             placeholder={'Søg efter kommune'}
+            styles={styles}
         />
     );
 };
 
 
 // // Style object for React-select
-// const styles: Styles<any, false> = {
-//     control: (provided) => ({
-//         ...provided,
-//         borderRadius: '5rem',
-//         borderColor: Color.BLUE,
-//         borderWidth: 2,
-//         // remove some of the default styles that are activated on focus / hover
-//         boxShadow: 'none',
-//         ':hover': {
-//             borderColor: Color.BLUE,
-//         },
-//         fontSize: '.85rem',
-//         // reset min-height
-//         minHeight: 0,
-//     }),
-//
-//     // Flip indicator container using flexbox order so search icon is to the left of the text
-//     indicatorsContainer: (provided) => ({
-//         ...provided,
-//         order: 1,
-//         paddingLeft: '.5rem',
-//     }),
-//     valueContainer: (provided) => ({
-//         ...provided,
-//         order: 3,
-//     }),
-//     placeholder: (provided) => ({
-//         ...provided,
-//         color: Color.DARK_GREY,
-//     }),
-// };
+const styles: Styles<any, false> = {
+    control: (provided) => ({
+        ...provided,
+        borderColor: "#0F81E8",
+        borderWidth: 2,
+
+        minHeight: "3rem",
+
+        // remove some of the default styles that are activated on focus / hover
+        boxShadow: 'none',
+        ':hover': {
+            borderColor: "#0F81E8",
+        },
+        fontSize: '1.2rem',
+        color: "#000"
+    }),
+    placeholder: (provided) => ({
+        ...provided,
+        color: "hsl(0, 0%, 30%)"
+    }),
+    singleValue: (provided) => ({
+        ...provided,
+        color: "#000"
+    }),
+};
 
 // Same as Select Component takes for its option type but it's not exported directly so we redefine here.
 interface HasLabelAndValue<T> {
