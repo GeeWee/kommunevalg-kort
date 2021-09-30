@@ -22,12 +22,11 @@ export const KommuneEventCard: FunctionComponent<KommuneEventCardProps> = ({komm
         </div>
         <div className="card-body">
             <h6 className="card-subtitle mb-2">
-                Dato: {kommuneEvent.date.toLocaleString()} <br/>
-                {kommuneString} <br/>
+                <div> <div>{kommuneString}</div> <div> {kommuneEvent.date.toLocaleString()} </div></div>
                 Sted: {kommuneEvent.place}
             </h6>
             <div className="card-text">
-                {moreInfoLink && <span>Mere info: {moreInfoLink}</span>}
+                {moreInfoLink && <button  className={"btn btn-primary"}>Mere info</button>}
             </div>
         </div>
     </div>

@@ -24,13 +24,17 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = ({even
         return event.date
     });
 
+    const sliced = eventsSortedByDate;
+
     const [width, height] = useWindowSize()
+
+    return renderCards(sliced);
 
 
     if (width < SMALL_SCREEN_BREAKPOINT) {
-        return renderCards(eventsSortedByDate);
+        return renderCards(sliced);
     } else {
-        return renderTable(eventsSortedByDate);
+        return renderTable(sliced);
     }
 };
 

@@ -29,7 +29,7 @@ const Home: NextPage = () => {
     if (kommuneEvents !== undefined || globalEvents !== undefined) {
         const hasKommuneEvents = kommuneEvents?.length !== 0;
         eventList = <>
-            <KommuneEventList events={[...globalEvents || [], ...kommuneEvents || []]}/>
+            <KommuneEventList events={[...globalEvents?.slice(0,3) || [], ...kommuneEvents || []]}/>
             {!hasKommuneEvents && <p>Vi har ikke nogen lokale events i din kommune lige nu.
                 Vi foreslår du deltager i en af de landsdækkende begivenheder ovenfor.</p>}
         </>
@@ -83,10 +83,11 @@ const Home: NextPage = () => {
                         </div>
                     </div>
 
-                    <div>
+                    { !kommune && <div>
                         <h2 className="text-center">Kommende begivenheder i alle kommuner</h2>
                         {allEvents && <AllKommunerEventsList events={allEvents}/>}
-                    </div>
+                    </div> }
+
 
                 </div>
             </main>

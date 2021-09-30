@@ -20,17 +20,17 @@ export const KommuneGroupList: FunctionComponent<KommuneGroupList> = (props) => 
     if (props.groups.length === 0){
         return <div>
             Vi har pt. ikke information om nogle lokale grupper i din kommune.
-            Hvis du er med i en gruppe som ikke står her, eller du gerne vil være med til at starte en gruppe så kan du
-            <SignUpLink>tilmelde dig Klimabevægelsens Kampagnehold.</SignUpLink>
+            Hvis du er med i en gruppe som ikke står her, eller du gerne vil være med til at starte en gruppe så kan du <SignUpLink>tilmelde dig Klimabevægelsens Kampagnehold.</SignUpLink>
         </div>
     }
+    return renderCards(props.groups);
 
-    if (width < SMALL_SCREEN_BREAKPOINT) {
-        return renderCards(props.groups);
-    } else {
-        return renderTable(props.groups);
-    }
 
+    // if (width < SMALL_SCREEN_BREAKPOINT) {
+    //     return renderCards(props.groups);
+    // } else {
+    //     return renderTable(props.groups);
+    // }
 
 };
 
