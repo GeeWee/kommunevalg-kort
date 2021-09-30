@@ -58,7 +58,6 @@ function renderTable(eventsSortedByDate: KommuneEvent[]) {
     })
 
     return (
-        <div>
             <table className={tableStyles.table}>
                 <thead>
                 <tr>
@@ -72,7 +71,6 @@ function renderTable(eventsSortedByDate: KommuneEvent[]) {
                 {rows}
                 </tbody>
             </table>
-        </div>
     )
 }
 
