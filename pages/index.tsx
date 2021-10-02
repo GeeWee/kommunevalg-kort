@@ -19,16 +19,6 @@ const Home: NextPage = () => {
         ?.filter(event => event.kommune !== "Landsdækkende")
         ?.slice(0, 10);
 
-
-    let kommuneSpecificContent;
-    if (kommune === undefined) {
-        kommuneSpecificContent = null;
-    } else {
-        kommuneSpecificContent = <KommuneOverview name={kommune}>
-
-        </KommuneOverview>
-    }
-
     return (
         <div>
             <Head>
@@ -57,7 +47,7 @@ const Home: NextPage = () => {
                         <KommuneCombobox value={kommune} onChange={setKommune} instanceId={"sdfsfsd"}/>
                     </div>
 
-                    {kommuneSpecificContent}
+                    {kommune && <KommuneOverview name={kommune} />}
 
                     <div>
                         <h1>Kommende begivenheder i alle kommuner</h1>
