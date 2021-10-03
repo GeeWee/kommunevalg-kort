@@ -15,3 +15,22 @@ html, body {
 .fat-card-border {
   border: 2px solid rgba(0, 0, 0, 0.125) !important;
 }
+
+
+.pre-wrap {
+  white-space: pre-wrap;
+}
+
+.card {
+  border-radius: 2px !important;
+}
+
+
+.link-button {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.btn-primary {
+  background-color: $color-1b !important;
+}

@@ -24,56 +24,8 @@ export const KommuneEventList: FunctionComponent<KommuneEventListProps> = ({even
         return event.date
     });
 
-    const [width, height] = useWindowSize()
-
-
-    if (width < SMALL_SCREEN_BREAKPOINT) {
-        return renderCards(eventsSortedByDate);
-    } else {
-        return renderTable(eventsSortedByDate);
-    }
+    return renderCards(eventsSortedByDate);
 };
-
-function renderTable(eventsSortedByDate: KommuneEvent[]) {
-    const rows = eventsSortedByDate.map((event, index) => {
-        const isGlobal = event.kommune === "Landsdækkende";
-        let moreInfoTd = <td/>
-        if (event.moreInfoLink) {
-            //not sure
-            moreInfoTd =
-                <td><a href={convertLinkToFullFledged(event.moreInfoLink)} target="_top">https://{event.moreInfoLink}</a></td>
-        }
-
-
-        return <tr key={index}>
-            <td>{event.date.toLocaleString()}</td>
-            <td>{event.name}</td>
-            <td>{isGlobal && <>
-                <div>Landsdækkende begivenhed:</div>
-            </>}
-                {event.place}
-            </td>
-            {moreInfoTd}
-        </tr>
-    })
-
-    return (
-            <table className={tableStyles.table}>
-                <thead>
-                <tr>
-                    <th>Tidspunkt</th>
-                    <th>Begivenhed</th>
-                    <th>Sted</th>
-                    <th>Mere information</th>
-                </tr>
-                </thead>
-                <tbody>
-                {rows}
-                </tbody>
-            </table>
-    )
-}
-
 
 function renderCards(eventsSortedByDate: KommuneEvent[]) {
     const cards = eventsSortedByDate.map((event, index) => {

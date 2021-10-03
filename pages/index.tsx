@@ -16,8 +16,7 @@ const Home: NextPage = () => {
     // noinspection JSUnusedLocalSymbols
     const allGroupsUnused = useAllGroups(); // To fetch the data so we cache it for later.
     const globalEvents = useKommuneEvents("Landsdækkende");
-    const allEvents = useAllEvents()
-        ?.slice(0, 10);
+    const allEvents = useAllEvents();
 
     const kommuneEvents = useKommuneEvents(kommune);
 
@@ -29,7 +28,7 @@ const Home: NextPage = () => {
     if (kommuneEvents !== undefined || globalEvents !== undefined) {
         const hasKommuneEvents = kommuneEvents?.length !== 0;
         eventList = <>
-            <KommuneEventList events={[...globalEvents || [], ...kommuneEvents || []]}/>
+            <KommuneEventList events={[...globalEvents?.slice(0,6) || [], ...kommuneEvents || []]}/>
             {!hasKommuneEvents && <p>Vi har ikke nogen lokale events i din kommune lige nu.
                 Vi foreslår du deltager i en af de landsdækkende begivenheder ovenfor.</p>}
         </>
@@ -48,6 +47,7 @@ const Home: NextPage = () => {
         </div>);
     }
 
+    console.log({allEvents});
 
 
     return (
@@ -83,10 +83,11 @@ const Home: NextPage = () => {
                         </div>
                     </div>
 
-                    <div>
-                        <h2 className="text-center">Kommende begivenheder i alle kommuner</h2>
+                    { !kommune && <div>
+                        <h2 className="text-center">Lokale og landsdækkende begivenheder</h2>
                         {allEvents && <AllKommunerEventsList events={allEvents}/>}
-                    </div>
+                    </div> }
+
 
                 </div>
             </main>
