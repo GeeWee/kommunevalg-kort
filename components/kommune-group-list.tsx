@@ -32,7 +32,7 @@ function renderCards(groups: KommuneGroup[]) {
     const cards = groups.map((group, index) => {
 
         return <div key={index} className="card my-2">
-            <div className={`card-header ${cardStyles.blueHeader}`}>
+            <div className={`card-header ${cardStyles.greenHeader}`}>
                 <h5 className="card-title">{group.groupName}</h5>
             </div>
             <div className="card-body">

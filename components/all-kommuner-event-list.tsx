@@ -25,53 +25,10 @@ export const AllKommunerEventsList: FunctionComponent<AllKommunerEventListProps>
         return event.date
     });
 
-    const [width, height] = useWindowSize()
+    return renderCards(eventsSortedByDate);
 
-    if (width < SMALL_SCREEN_BREAKPOINT) {
-        return renderCards(eventsSortedByDate);
-    } else {
-        return renderTable(eventsSortedByDate);
-    }
 };
 
-
-function renderTable(eventsSortedByDate: KommuneEvent[]) {
-    const rows = eventsSortedByDate.map((event, index) => {
-        let moreInfoTd = <td/>
-        if (event.moreInfoLink) {
-            moreInfoTd = <td><a href={convertLinkToFullFledged(event.moreInfoLink)} target="_top">{event.moreInfoLink}</a></td>
-        }
-        return <tr key={index}>
-            <td>{event.date.toLocaleString()}</td>
-            <td>{event.name}</td>
-            <td>{event.kommune}</td>
-            <td>{event.place}</td>
-            {moreInfoTd}
-        </tr>
-    })
-
-    return (
-        <div>
-            <table className={tableStyles.table}>
-                <thead>
-                <tr>
-                    <th>Tidspunkt</th>
-                    <th>Begivenhed</th>
-                    <th>Kommune</th>
-                    <th>Sted</th>
-                    <th>Mere information</th>
-                </tr>
-                </thead>
-                <tbody>
-                {rows}
-                <tr>
-                    <td colSpan={999} className={"text-center"}>Og mange flere...</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    )
-}
 
 function renderCards(eventsSortedByDate: KommuneEvent[]) {
     const cards = eventsSortedByDate.map((event, index) => {
