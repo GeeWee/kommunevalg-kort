@@ -5,6 +5,7 @@ import {KommuneEvent} from "../types";
 import {DateTime} from "luxon";
 import _ from "lodash";
 import classNames from "classnames";
+import {MoreInfoSection} from "./more-info-section";
 
 export interface KommuneEventCardProps {
     kommuneEvent: KommuneEvent,
@@ -56,7 +57,7 @@ export const KommuneEventCard: FunctionComponent<KommuneEventCardProps> = ({komm
 
             </div>
             <div className="card-text">
-                {moreInfoLink && <button className={"btn btn-primary"}>Mere info</button>}
+                <MoreInfoSection moreInfoLink={kommuneEvent.moreInfoLink}/>
             </div>
         </div>
     </div>
