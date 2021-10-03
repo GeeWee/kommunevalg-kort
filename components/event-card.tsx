@@ -3,6 +3,7 @@ import {convertLinkToFullFledged} from "../utils/link-validation-utils";
 import cardStyles from "../styles/cards.module.scss";
 import {KommuneEvent} from "../types";
 import {DateTime} from "luxon";
+import _ from "lodash";
 
 export interface KommuneEventCardProps {
     kommuneEvent: KommuneEvent
@@ -21,7 +22,7 @@ export const KommuneEventCard: FunctionComponent<KommuneEventCardProps> = ({komm
         <div className={`card-header ${cardStyles.blueHeader}`}>
             <div className={"d-flex justify-content-between"}>
                 <h5>{kommuneEvent.name}</h5>
-                <h5>{kommuneEvent.date.toLocaleString(DateTime.DATE_HUGE)}</h5>
+                <h5>{_.capitalize(kommuneEvent.date.setLocale("da-dk").toLocaleString(DateTime.DATE_HUGE))}</h5>
             </div>
         </div>
         <div className="card-body">
