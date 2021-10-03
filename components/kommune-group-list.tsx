@@ -17,10 +17,11 @@ export const KommuneGroupList: FunctionComponent<KommuneGroupList> = (props) => 
     const [width, height] = useWindowSize()
 
     // Empty state for groups
-    if (props.groups.length === 0){
+    if (props.groups.length === 0) {
         return <div>
             Vi har pt. ikke information om nogle lokale grupper i din kommune.
-            Hvis du er med i en gruppe som ikke står her, eller du gerne vil være med til at starte en gruppe så kan du <SignUpLink>tilmelde dig Klimabevægelsens Kampagnehold.</SignUpLink>
+            Hvis du er med i en gruppe som ikke står her, eller du gerne vil være med til at starte en gruppe så kan
+            du <SignUpLink>tilmelde dig Klimabevægelsens Kampagnehold.</SignUpLink>
         </div>
     }
     return renderCards(props.groups);
@@ -35,16 +36,30 @@ function renderCards(groups: KommuneGroup[]) {
                 <h5 className="card-title">{group.groupName}</h5>
             </div>
             <div className="card-body">
-                <h6 className="card-subtitle mb-2">
-                    Mødes: {group.meetings}<br/>
-                    Lokation: {group.location}
+                <div className={"d-flex justify-content-between card-subtitle"}>
+                    <div>
+                        <span className={"fw-bold"}>
+                        Mødes:
+                        </span>
+                        {" "}
+                        <span>
+                        {group.meetings}
+                    </span>
+                    </div>
 
-                </h6>
+                    <div>
+                        <span className={"fw-bold"}>
+                        Sted:
+                        </span>
+                        {" "}
+                        <span>
+                        {group.location}
+                    </span>
+                    </div>
+                </div>
                 <div className="card-text">
-                    <p>
-                    {group.description}
-                    </p>
-                    <div className={"fw-bolder"}>Kontaktperson:</div>
+                    <div className={"my-2 pre-wrap"}>{group.description}</div>
+                    <div className={"fw-bolder"}>Kontakt:</div>
                     <MailToParagraph text={group.person}/>
                 </div>
             </div>
@@ -58,12 +73,12 @@ function renderCards(groups: KommuneGroup[]) {
 
 
 // Automatically converts mails in text to mailto links
-export const MailToParagraph: FunctionComponent<{text: string}> = (props) => {
+export const MailToParagraph: FunctionComponent<{ text: string }> = (props) => {
     const words = props.text.split(" ");
 
     // This is horrible
     const wordsWithEmailsAsLinks = words.map(word => {
-        if (isEmail(word)){
+        if (isEmail(word)) {
             return <><a href={`mailto:${word}`}>{word}</a> {" "}</>
         }
         return <span>{word} </span>;
