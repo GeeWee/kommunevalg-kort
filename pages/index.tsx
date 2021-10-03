@@ -16,8 +16,7 @@ const Home: NextPage = () => {
     // noinspection JSUnusedLocalSymbols
     const allGroupsUnused = useAllGroups(); // To fetch the data so we cache it for later.
     const globalEvents = useKommuneEvents("Landsdækkende");
-    const allEvents = useAllEvents()
-        ?.slice(0, 10);
+    const allEvents = useAllEvents();
 
     const kommuneEvents = useKommuneEvents(kommune);
 
@@ -48,6 +47,7 @@ const Home: NextPage = () => {
         </div>);
     }
 
+    console.log({allEvents});
 
 
     return (
@@ -84,7 +84,7 @@ const Home: NextPage = () => {
                     </div>
 
                     { !kommune && <div>
-                        <h2 className="text-center">Kommende begivenheder i alle kommuner</h2>
+                        <h2 className="text-center">Lokale og landsdækkende begivenheder</h2>
                         {allEvents && <AllKommunerEventsList events={allEvents}/>}
                     </div> }
 

@@ -25,14 +25,14 @@ export const AllKommunerEventsList: FunctionComponent<AllKommunerEventListProps>
         return event.date
     });
 
-    return renderCards(eventsSortedByDate);
+    return renderCards(eventsSortedByDate.slice(0,6));
 
 };
 
 
 function renderCards(eventsSortedByDate: KommuneEvent[]) {
     const cards = eventsSortedByDate.map((event, index) => {
-        return <KommuneEventCard kommuneEvent={event} key={index} />
+        return <KommuneEventCard kommuneEvent={event} differentColors={false} key={index} />
     })
 
     return <div>
