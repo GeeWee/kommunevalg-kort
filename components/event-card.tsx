@@ -14,7 +14,6 @@ export const KommuneEventCard: FunctionComponent<KommuneEventCardProps> = ({komm
         moreInfoLink =
             <a href={convertLinkToFullFledged(kommuneEvent.moreInfoLink)} target="_top">{kommuneEvent.moreInfoLink}</a>
     }
-
     const isGlobal = kommuneEvent.kommune === "Landsdækkende";
     const kommuneString = isGlobal ? "Landsdækkende begivenhed" : `${kommuneEvent.kommune} kommune`
 
@@ -22,7 +21,7 @@ export const KommuneEventCard: FunctionComponent<KommuneEventCardProps> = ({komm
         <div className={`card-header ${cardStyles.blueHeader}`}>
             <div className={"d-flex justify-content-between"}>
                 <h5>{kommuneEvent.name}</h5>
-                <h5>{kommuneEvent.date.toLocaleString(DateTime.DATE_FULL)}</h5>
+                <h5>{kommuneEvent.date.toLocaleString(DateTime.DATE_HUGE)}</h5>
             </div>
         </div>
         <div className="card-body">
