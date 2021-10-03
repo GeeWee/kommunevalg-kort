@@ -24,46 +24,8 @@ export const KommuneGroupList: FunctionComponent<KommuneGroupList> = (props) => 
         </div>
     }
     return renderCards(props.groups);
-
-
-    // if (width < SMALL_SCREEN_BREAKPOINT) {
-    //     return renderCards(props.groups);
-    // } else {
-    //     return renderTable(props.groups);
-    // }
-
 };
 
-function renderTable(groups: KommuneGroup[]){
-    const rows = groups.map((group, index) => {
-        return <tr key={index}>
-            <td>{group.groupName}</td>
-            <td>{group.description}</td>
-            <td>{group.location}</td>
-            <td>{group.meetings}</td>
-            <td>{group.person}</td>
-        </tr>
-    })
-
-    return (
-        <div>
-            <table className={tableStyles.table}>
-                <thead>
-                <tr>
-                    <th>Navn</th>
-                    <th>Beskrivelse</th>
-                    <th>Mødested</th>
-                    <th>Mødefrekvens</th>
-                    <th>Mere information</th>
-                </tr>
-                </thead>
-                <tbody>
-                {rows}
-                </tbody>
-            </table>
-        </div>
-    )
-}
 
 function renderCards(groups: KommuneGroup[]) {
     const cards = groups.map((group, index) => {
@@ -82,7 +44,8 @@ function renderCards(groups: KommuneGroup[]) {
                     <p>
                     {group.description}
                     </p>
-                    <div className={"fw-bolder"}>Kontaktperson:</div> {group.person}
+                    <div className={"fw-bolder"}>Kontaktperson:</div>
+                    <MailToParagraph text={group.person}/>
                 </div>
             </div>
         </div>
@@ -91,4 +54,30 @@ function renderCards(groups: KommuneGroup[]) {
     return <div>
         {cards}
     </div>
+}
+
+
+// Automatically converts mails in text to mailto links
+export const MailToParagraph: FunctionComponent<{text: string}> = (props) => {
+    const words = props.text.split(" ");
+
+    // This is horrible
+    const wordsWithEmailsAsLinks = words.map(word => {
+        if (isEmail(word)){
+            return <><a href={`mailto:${word}`}>{word}</a> {" "}</>
+        }
+        return <span>{word} </span>;
+    });
+
+
+    return (
+        <>
+            {wordsWithEmailsAsLinks}
+        </>
+    )
+};
+
+function isEmail(email: string) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
