@@ -9,6 +9,7 @@ import {SMALL_SCREEN_BREAKPOINT} from "../utils/constants";
 import cardStyles from "../styles/cards.module.scss";
 import {SignUpLink} from "./sign-up-link";
 import React from 'react';
+import Linkify from "react-linkify";
 
 export interface KommuneGroupList {
     groups: KommuneGroup[]
@@ -61,7 +62,9 @@ function renderCards(groups: KommuneGroup[]) {
                 <div className="card-text">
                     <div className={"my-2 pre-wrap"}>{group.description}</div>
                     <div className={"fw-bolder"}>Kontakt:</div>
-                    <MailToParagraph text={group.person}/>
+                    <Linkify>
+                        {group.person}
+                    </Linkify>
                 </div>
             </div>
         </div>
@@ -70,30 +73,4 @@ function renderCards(groups: KommuneGroup[]) {
     return <div>
         {cards}
     </div>
-}
-
-
-// Automatically converts mails in text to mailto links
-export const MailToParagraph: FunctionComponent<{ text: string }> = (props) => {
-    const words = props.text.split(" ");
-
-    // This is horrible
-    const wordsWithEmailsAsLinks = words.map((word, index) => {
-        if (isEmail(word)) {
-            return <React.Fragment key={index}><a href={`mailto:${word}`}>{word}</a> {" "}</React.Fragment>
-        }
-        return <span key={index }>{word} </span>;
-    });
-
-
-    return (
-        <>
-            {wordsWithEmailsAsLinks}
-        </>
-    )
-};
-
-function isEmail(email: string) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
 }
