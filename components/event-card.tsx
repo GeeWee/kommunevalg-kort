@@ -1,4 +1,4 @@
-import {FunctionComponent} from 'react';
+import React, {FunctionComponent} from 'react';
 import {convertLinkToFullFledged} from "../utils/link-validation-utils";
 import cardStyles from "../styles/cards.module.scss";
 import {KommuneEvent} from "../types";
@@ -26,12 +26,33 @@ export const KommuneEventCard: FunctionComponent<KommuneEventCardProps> = ({komm
             </div>
         </div>
         <div className="card-body">
-            <h6 className="card-subtitle mb-2">
-                <div>
-                    <div>{kommuneString}</div>
+
+
+
+            <div className="card-subtitle mb-2">
+                <div className={"d-flex justify-content-between card-subtitle"}>
+                    <div>
+                        <span>
+                        {kommuneString}
+                    </span>
+                    </div>
+
+                    <div>
+                        <span className={"fw-bold"}>
+                        Sted:
+                        </span>
+                        {" "}
+                        <span>
+                        {_.capitalize(kommuneEvent.place)}
+                    </span>
+                    </div>
                 </div>
-                Sted: {kommuneEvent.place}
-            </h6>
+
+                {/*<div>*/}
+                {/*    {kommuneString}*/}
+                {/*</div>*/}
+                {/*<span className={"fw-bold"}>Sted:</span> {kommuneEvent.place}*/}
+            </div>
             <div className="card-text">
                 {moreInfoLink && <button className={"btn btn-primary"}>Mere info</button>}
             </div>

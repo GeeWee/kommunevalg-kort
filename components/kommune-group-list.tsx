@@ -8,6 +8,7 @@ import {useWindowSize} from "@react-hook/window-size";
 import {SMALL_SCREEN_BREAKPOINT} from "../utils/constants";
 import cardStyles from "../styles/cards.module.scss";
 import {SignUpLink} from "./sign-up-link";
+import React from 'react';
 
 export interface KommuneGroupList {
     groups: KommuneGroup[]
@@ -77,11 +78,11 @@ export const MailToParagraph: FunctionComponent<{ text: string }> = (props) => {
     const words = props.text.split(" ");
 
     // This is horrible
-    const wordsWithEmailsAsLinks = words.map(word => {
+    const wordsWithEmailsAsLinks = words.map((word, index) => {
         if (isEmail(word)) {
-            return <><a href={`mailto:${word}`}>{word}</a> {" "}</>
+            return <React.Fragment key={index}><a href={`mailto:${word}`}>{word}</a> {" "}</React.Fragment>
         }
-        return <span>{word} </span>;
+        return <span key={index }>{word} </span>;
     });
 
 
