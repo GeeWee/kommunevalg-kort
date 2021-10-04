@@ -25,7 +25,7 @@ export const AllKommunerEventsList: FunctionComponent<AllKommunerEventListProps>
         return event.date
     });
 
-    return renderCards(eventsSortedByDate.slice(0,6));
+    return renderCards(eventsSortedByDate.slice(0,3));
 
 };
 

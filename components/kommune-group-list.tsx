@@ -45,7 +45,7 @@ function renderCards(groups: KommuneGroup[]) {
                         </span>
                         {" "}
                         <span>
-                        {group.meetings}
+                        {_.capitalize(group.meetings)}
                     </span>
                     </div>
 
@@ -55,7 +55,7 @@ function renderCards(groups: KommuneGroup[]) {
                         </span>
                         {" "}
                         <span>
-                        {group.location}
+                        {_.capitalize(group.location)}
                     </span>
                     </div>
                 </div>

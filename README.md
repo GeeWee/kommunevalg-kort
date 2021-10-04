@@ -2,14 +2,17 @@
 
 
 Sheet med begivenheder & grupper:
-https://docs.google.com/spreadsheets/d/1M-lQqkZMJoN5_8_6JrvsEEEunDX4GFYA0yQGHx3zenQ/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1XCfTnJRKyv8guiBW8nJp5LNe0hLpwrGfrA_kesgHRmE/edit#gid=0
+
+(old) https://docs.google.com/spreadsheets/d/1M-lQqkZMJoN5_8_6JrvsEEEunDX4GFYA0yQGHx3zenQ/edit?usp=sharing
+
 
 ## --
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
-
+    
 First, run the development server:
 
 ```bash
