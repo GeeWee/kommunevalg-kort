@@ -10365,48 +10365,42 @@ In short, if you change one, change them all
                                 <div class="col sqs-col-12 span-12">
                                     <div class="sqs-block html-block sqs-block-html" data-block-type="2"
                                          id="block-yui_3_17_2_1_1629205408765_7384">
-<!--                                        <div class="sqs-block-content"><h2-->
-<!--                                                style="text-align:center;white-space:pre-wrap;">Klima-begivenheder nær-->
-<!--                                            dig</h2></div>-->
+                                        <!--                                        <div class="sqs-block-content"><h2-->
+                                        <!--                                                style="text-align:center;white-space:pre-wrap;">Klima-begivenheder nær-->
+                                        <!--                                            dig</h2></div>-->
                                     </div>
-<!--                                    <iframe src="http://localhost:3000" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' style="height:200px;width:100%;border:none;overflow:hidden;"></iframe>-->
+                                    <!--                                    <iframe src="http://localhost:3000" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' style="height:200px;width:100%;border:none;overflow:hidden;"></iframe>-->
 
-                                    <iframe src="http://localhost:3000" id="climate-map" width="100%" height="1400px" style="border:0;"></iframe>
+                                    <iframe src="https://kv.gustavwengel.dk" id="climate-map" width="100%"
+                                            height="1400px" style="border:0;"></iframe>
 
-                                <!--              Add event listener to scroll to top!                      -->
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"
+                                            integrity="sha512-dnvR4Aebv5bAtJxDunq3eE8puKAJrY9GBJYl9GC6lTOEC76s1dbDfJFcL9GyzpaDW4vlI/UjR8sKbc1j6Ynx6w=="
+                                            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                                     <script>
-                                        window.addEventListener("message", (event) => {
-                                            if (event.data === "scrollToTop"){
-                                                document.querySelector("body").scrollIntoView({
-                                                    behavior: "smooth"
-                                                });
-                                            }
-                                        }, false);
+                                        iFrameResize({log: true}, '#climate-map')
                                     </script>
 
-                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js" integrity="sha512-dnvR4Aebv5bAtJxDunq3eE8puKAJrY9GBJYl9GC6lTOEC76s1dbDfJFcL9GyzpaDW4vlI/UjR8sKbc1j6Ynx6w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>                                    <script>
-                                        iFrameResize({ log: true }, '#climate-map')
-                                    </script>
-<!--                                    <div class="sqs-block code-block sqs-block-code" data-block-type="23"-->
-<!--                                         id="block-yui_3_17_2_1_1629205203580_7743">-->
-<!--                                        <div class="sqs-block-content">-->
-<!--                                            <div class="infogram-embed" data-id="3b2e4fa2-d18d-4367-b549-76694454924d"-->
-<!--                                                 data-type="interactive" data-title="" style="min-height: 1px;"-->
-<!--                                                 data-processed="1" id="ig-0fb4552a-4667-7cf5-8770-0933a6a38ca3">-->
-<!--                                                <iframe style="border: medium none; width: 1210px; height: 428px;"-->
-<!--                                                        src="Kommunalvalg%202021%20%E2%80%94%20Klimabev%C3%A6gelsen%20i%20Danmark_files/3b2e4fa2-d18d-4367-b549-76694454924d.html"-->
-<!--                                                        scrolling="no" allowfullscreen="" tabindex="-1"-->
-<!--                                                        frameborder="0"></iframe>-->
-<!--                                            </div>-->
-<!--                                            <script>!function (e, i, n, s) {-->
-<!--                                                var t = "InfogramEmbeds", d = e.getElementsByTagName("script")[0];-->
-<!--                                                if (window[t] && window[t].initialized) window[t].process && window[t].process(); else if (!e.getElementById(n)) {-->
-<!--                                                    var o = e.createElement("script");-->
-<!--                                                    o.async = 1, o.id = n, o.src = "https://e.infogram.com/js/dist/embed-loader-min.js", d.parentNode.insertBefore(o, d)-->
-<!--                                                }-->
-<!--                                            }(document, 0, "infogram-async");</script>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                    <!--                                    <div class="sqs-block code-block sqs-block-code" data-block-type="23"-->
+                                    <!--                                         id="block-yui_3_17_2_1_1629205203580_7743">-->
+                                    <!--                                        <div class="sqs-block-content">-->
+                                    <!--                                            <div class="infogram-embed" data-id="3b2e4fa2-d18d-4367-b549-76694454924d"-->
+                                    <!--                                                 data-type="interactive" data-title="" style="min-height: 1px;"-->
+                                    <!--                                                 data-processed="1" id="ig-0fb4552a-4667-7cf5-8770-0933a6a38ca3">-->
+                                    <!--                                                <iframe style="border: medium none; width: 1210px; height: 428px;"-->
+                                    <!--                                                        src="Kommunalvalg%202021%20%E2%80%94%20Klimabev%C3%A6gelsen%20i%20Danmark_files/3b2e4fa2-d18d-4367-b549-76694454924d.html"-->
+                                    <!--                                                        scrolling="no" allowfullscreen="" tabindex="-1"-->
+                                    <!--                                                        frameborder="0"></iframe>-->
+                                    <!--                                            </div>-->
+                                    <!--                                            <script>!function (e, i, n, s) {-->
+                                    <!--                                                var t = "InfogramEmbeds", d = e.getElementsByTagName("script")[0];-->
+                                    <!--                                                if (window[t] && window[t].initialized) window[t].process && window[t].process(); else if (!e.getElementById(n)) {-->
+                                    <!--                                                    var o = e.createElement("script");-->
+                                    <!--                                                    o.async = 1, o.id = n, o.src = "https://e.infogram.com/js/dist/embed-loader-min.js", d.parentNode.insertBefore(o, d)-->
+                                    <!--                                                }-->
+                                    <!--                                            }(document, 0, "infogram-async");</script>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -12487,13 +12481,17 @@ In short, if you change one, change them all
                     <div class="ms-stripe-form-wrapper">
                         <div class="ms-card-wrapper">
                             <div class="ms-card w-embed">
-                                <svg version="1.0" id="visaLayer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 251.15 158.68" enable-background="new 0 0 251.15 158.68" xml:space="preserve"><g id="visaCard"><defs><path id="visaCard_Shape" d="M242.646,158.68H8.504c-4.677,0-8.504-3.827-8.504-8.504V8.504C0,3.827,3.827,0,8.504,0h234.142
+                                <svg version="1.0" id="visaLayer_1" xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 251.15 158.68" enable-background="new 0 0 251.15 158.68"
+                                     xml:space="preserve"><g id="visaCard"><defs><path id="visaCard_Shape" d="M242.646,158.68H8.504c-4.677,0-8.504-3.827-8.504-8.504V8.504C0,3.827,3.827,0,8.504,0h234.142
 			c4.677,0,8.504,3.827,8.504,8.504v141.672C251.15,154.853,247.323,158.68,242.646,158.68z"></path></defs> <clipPath
                                         id="visaCard_Shape_1_"><use xlink:href="#Card_Shape" overflow="visible"></use></clipPath> <g
                                         clip-path="url(#Card_Shape_1_)"><rect y="0.741" fill="#FFFFFF" width="251.15" height="159.538"></rect>
                                     <rect x="4.183" y="134.357" fill="#F7B600" width="242.781" height="21.766"></rect>
-                                    <rect x="4.183" y="4.926" fill="#1A1F71" width="242.781" height="21.767"></rect></g></g> <path
-                                        id="visaMark_1_" fill="#1A1F71" d="M101.363,49.673l-25.079,59.828h-16.36L47.582,61.754c-0.748-2.936-1.4-4.015-3.676-5.256
+                                    <rect x="4.183" y="4.926" fill="#1A1F71" width="242.781" height="21.767"></rect></g></g>
+                                    <path
+                                            id="visaMark_1_" fill="#1A1F71" d="M101.363,49.673l-25.079,59.828h-16.36L47.582,61.754c-0.748-2.936-1.4-4.015-3.676-5.256
 	c-3.722-2.022-9.867-3.913-15.269-5.089l0.365-1.736h26.338c3.355,0,6.373,2.232,7.14,6.096L69,90.392l16.102-40.719H101.363z
 	 M165.467,89.969c0.068-15.789-21.826-16.664-21.681-23.719c0.048-2.144,2.092-4.427,6.563-5.011
 	c2.216-0.286,8.332-0.517,15.265,2.677l2.711-12.692c-3.724-1.347-8.516-2.644-14.477-2.644c-15.302,0-26.066,8.127-26.152,19.776
@@ -12504,9 +12502,13 @@ In short, if you change one, change them all
 	l-12.797,59.828H95.204l12.798-59.828H123.479z"></path></svg>
                             </div>
                             <div class="ms-card w-embed">
-                                <svg version="1.0" id="masterCardLayer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 251.15 158.68" enable-background="new 0 0 251.15 158.68" xml:space="preserve"><path id="masterCard_Shape" fill="#010101" d="M242.646,158.68H8.504c-4.677,0-8.504-3.827-8.504-8.504V8.504C0,3.827,3.827,0,8.504,0
-	h234.142c4.677,0,8.504,3.827,8.504,8.504v141.672C251.15,154.853,247.323,158.68,242.646,158.68z" class="CardShape"></path> <g
-                                        id="masterCardMark"><path id="masterCardXMLID_567_" fill="#FFFFFF" d="M70.489,145.45v-8.972c0-3.368-2.027-5.604-5.485-5.634
+                                <svg version="1.0" id="masterCardLayer_1" xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 251.15 158.68" enable-background="new 0 0 251.15 158.68"
+                                     xml:space="preserve"><path id="masterCard_Shape" fill="#010101" d="M242.646,158.68H8.504c-4.677,0-8.504-3.827-8.504-8.504V8.504C0,3.827,3.827,0,8.504,0
+	h234.142c4.677,0,8.504,3.827,8.504,8.504v141.672C251.15,154.853,247.323,158.68,242.646,158.68z" class="CardShape"></path>
+                                    <g
+                                            id="masterCardMark"><path id="masterCardXMLID_567_" fill="#FFFFFF" d="M70.489,145.45v-8.972c0-3.368-2.027-5.604-5.485-5.634
 		c-1.818-0.03-3.696,0.536-5.008,2.534c-0.984-1.58-2.534-2.534-4.71-2.534c-1.52,0-3.13,0.417-4.292,2.087v-1.729h-2.862v14.248
 		h2.892v-8.168c0-2.474,1.49-3.786,3.607-3.786c2.057,0,3.219,1.341,3.219,3.756v8.197h2.892v-8.168c0-2.474,1.55-3.786,3.607-3.786
 		c2.116,0,3.249,1.341,3.249,3.756v8.197H70.489z M116.93,131.201h-5.187v-4.322h-2.891v4.322h-3.011v2.593h3.011v6.737
@@ -12551,13 +12553,13 @@ In short, if you change one, change them all
 		c-0.984-1.282-2.593-2.087-4.621-2.087c-3.994,0-7.035,3.13-7.035,7.482s3.041,7.482,7.035,7.482c2.027,0,3.637-0.805,4.621-2.086
 		v1.729h2.862V138.326z M192.673,138.326c0-2.683,1.699-4.829,4.442-4.829c2.623,0,4.352,2.057,4.352,4.829
 		c0,2.772-1.729,4.829-4.352,4.829C194.372,143.154,192.673,141.008,192.673,138.326z"></path>
-                                    <g id="masterCardXMLID_328_"><rect x="100.068" y="22.773" fill="#F16122" width="51.589" height="84.266"></rect>
-                                        <path id="masterCardXMLID_330_" fill="#E91D25" d="M105.394,64.906c0-17.095,8.004-32.32,20.469-42.133
+                                        <g id="masterCardXMLID_328_"><rect x="100.068" y="22.773" fill="#F16122" width="51.589" height="84.266"></rect>
+                                            <path id="masterCardXMLID_330_" fill="#E91D25" d="M105.394,64.906c0-17.095,8.004-32.32,20.469-42.133
 			c-9.116-7.176-20.618-11.458-33.119-11.458c-29.595,0-53.587,23.994-53.587,53.591s23.992,53.591,53.587,53.591
 			c12.501,0,24.003-4.281,33.119-11.458C113.398,97.227,105.394,82.002,105.394,64.906z"></path>
-                                        <path fill="#F79E1D" d="M207.456,98.114V96.39h0.696v-0.352h-1.772v0.352h0.696v1.725H207.456z M210.895,98.114v-2.08h-0.543
+                                            <path fill="#F79E1D" d="M207.456,98.114V96.39h0.696v-0.352h-1.772v0.352h0.696v1.725H207.456z M210.895,98.114v-2.08h-0.543
 			l-0.625,1.43l-0.625-1.43h-0.543v2.08h0.384v-1.569l0.586,1.353h0.397l0.586-1.356v1.572H210.895z"></path>
-                                        <path fill="#F79E1D" d="M212.568,64.906c0,29.597-23.992,53.591-53.587,53.591c-12.501,0-24.003-4.281-33.119-11.458
+                                            <path fill="#F79E1D" d="M212.568,64.906c0,29.597-23.992,53.591-53.587,53.591c-12.501,0-24.003-4.281-33.119-11.458
 			c12.465-9.813,20.468-25.038,20.468-42.133c0-17.095-8.004-32.32-20.468-42.133c9.116-7.176,20.617-11.458,33.119-11.458
 			C188.577,11.315,212.568,35.309,212.568,64.906z"></path></g></g></svg>
                             </div>
@@ -12574,10 +12576,15 @@ In short, if you change one, change them all
                                 </svg>
                             </div>
                             <div class="ms-card w-embed">
-                                <svg version="1.0" id="americanExpressLayer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 251.15 158.68" enable-background="new 0 0 251.15 158.68" xml:space="preserve"><path id="americanExpressCard_Shape" fill="#007DC3" d="M242.646,158.68H8.504c-4.677,0-8.504-3.827-8.504-8.504V8.504C0,3.827,3.827,0,8.504,0
-	h234.142c4.677,0,8.504,3.827,8.504,8.504v141.672C251.15,154.853,247.323,158.68,242.646,158.68z"></path> <path
-                                        display="none" fill="#007DC3" d="M148.25,57.77h-42.31v42.46h42.3v-14c0.179-0.276,0.267-0.601,0.25-0.93
-	c0.027-0.326-0.062-0.652-0.25-0.92L148.25,57.77z"></path> <g><path fill="#FFFFFF" d="M33.246,56.163L28.932,45.51l-4.314,10.652H33.246z M128.744,52.008c-0.987,0.436-2.067,0.619-3.142,0.533
+                                <svg version="1.0" id="americanExpressLayer_1" xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                     viewBox="0 0 251.15 158.68" enable-background="new 0 0 251.15 158.68"
+                                     xml:space="preserve"><path id="americanExpressCard_Shape" fill="#007DC3" d="M242.646,158.68H8.504c-4.677,0-8.504-3.827-8.504-8.504V8.504C0,3.827,3.827,0,8.504,0
+	h234.142c4.677,0,8.504,3.827,8.504,8.504v141.672C251.15,154.853,247.323,158.68,242.646,158.68z"></path>
+                                    <path
+                                            display="none" fill="#007DC3" d="M148.25,57.77h-42.31v42.46h42.3v-14c0.179-0.276,0.267-0.601,0.25-0.93
+	c0.027-0.326-0.062-0.652-0.25-0.92L148.25,57.77z"></path>
+                                    <g><path fill="#FFFFFF" d="M33.246,56.163L28.932,45.51l-4.314,10.652H33.246z M128.744,52.008c-0.987,0.436-2.067,0.619-3.142,0.533
 		h-7.723v-5.965h7.829c1.018-0.071,2.038,0.093,2.983,0.479c0.872,0.445,1.396,1.366,1.332,2.344
 		c0.058,1.032-0.453,2.012-1.332,2.557 M183.657,56.163l-4.421-10.652l-4.314,10.652H183.657z M81.288,67.561H74.79V46.842
 		l-9.161,20.719h-5.326l-9.268-20.772v20.772H37.933l-2.45-5.912H22.327l-2.45,5.912H13.22L24.564,40.93h9.427l10.652,25.086V41.09
@@ -12594,7 +12601,7 @@ In short, if you change one, change them all
 		V70.49c3.138,1.567,6.614,2.336,10.12,2.237h11.824l2.45-5.912h5.326l2.397,5.912H206.4v-5.539l3.355,5.592h17.736V35.817h-17.204
 		v4.367l-2.45-4.367h-18.215v4.367l-2.237-4.367h-24.394c-3.673-0.196-7.337,0.537-10.652,2.13v-2.13h-16.618v2.13
 		c-2.045-1.546-4.579-2.302-7.137-2.13H66.961l-4.154,9.534l-4.208-9.534H39.265v4.367l-2.184-4.367H20.57L12.9,53.34V72.834z"></path>
-                                    <path fill="#FFFFFF" d="M238.25,92.327h-11.611c-0.881-0.104-1.773,0.064-2.557,0.479c-0.641,0.42-1.007,1.152-0.959,1.917
+                                        <path fill="#FFFFFF" d="M238.25,92.327h-11.611c-0.881-0.104-1.773,0.064-2.557,0.479c-0.641,0.42-1.007,1.152-0.959,1.917
 		c-0.005,0.885,0.551,1.676,1.385,1.971c0.797,0.224,1.622,0.332,2.45,0.32h3.462c2.581-0.237,5.155,0.526,7.19,2.13
 		c0.219,0.21,0.415,0.442,0.586,0.692L238.25,92.327z M238.25,109.797c-2.133,2.496-5.365,3.773-8.628,3.409h-12.25v-5.752h12.197
 		c0.902,0.116,1.815-0.113,2.557-0.639c0.506-0.444,0.798-1.084,0.799-1.758c0.021-0.678-0.274-1.328-0.799-1.758
@@ -12616,8 +12623,9 @@ In short, if you change one, change them all
 		H173.91v5.326h15.073v5.326h-21.305V86.682z M125.069,98.932h-8.362v-6.764h8.362c2.29,0,3.888,0.905,3.888,3.249
 		c0,2.344-1.545,3.515-3.941,3.515 M110.475,110.809l-9.694-10.652l9.694-10.652V110.809z M85.389,107.667H69.73v-5.326h13.901
 		v-5.326H69.73v-4.794h15.978l6.871,7.723L85.389,107.667z M135.721,95.363c0,7.35-5.326,8.895-11.025,8.895h-7.989v8.895h-12.303
-		l-7.776-8.735l-8.096,8.788H63.445V86.575h25.459l7.829,8.682l8.043-8.682h20.293c5.06,0,10.652,1.385,10.652,8.735"></path></g> <path
-                                        display="none" fill="#FFFFFF" d="M34.407,143.989c0,2.014-1.633,3.647-3.647,3.647s-3.647-1.633-3.647-3.647
+		l-7.776-8.735l-8.096,8.788H63.445V86.575h25.459l7.829,8.682l8.043-8.682h20.293c5.06,0,10.652,1.385,10.652,8.735"></path></g>
+                                    <path
+                                            display="none" fill="#FFFFFF" d="M34.407,143.989c0,2.014-1.633,3.647-3.647,3.647s-3.647-1.633-3.647-3.647
 	c0-2.014,1.633-3.647,3.647-3.647c0,0,0,0,0,0c1.989-0.025,3.622,1.568,3.647,3.557C34.408,143.93,34.408,143.959,34.407,143.989
 	 M35.074,143.989c0-2.456-1.991-4.447-4.447-4.447s-4.447,1.991-4.447,4.447c0,2.456,1.991,4.447,4.447,4.447
 	S35.074,146.445,35.074,143.989 M31.783,143.1c0-0.489-0.356-0.534-0.578-0.534h-1.201v1.112h1.112c0.4,0,0.712,0,0.712-0.578

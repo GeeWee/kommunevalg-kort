@@ -41,7 +41,7 @@ const Home: NextPage = () => {
         groupList = (<div>
             <div className={"my-3"}>
                 <h2 className={"text-center"}>Grupper i {kommune}</h2>
-                <KommuneGroupList groups={groups}>
+                <KommuneGroupList groups={groups} kommuneName={kommune as KommuneName}>
                 </KommuneGroupList>
             </div>
         </div>);

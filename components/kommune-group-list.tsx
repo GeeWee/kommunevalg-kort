@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import {DateTime, Duration} from 'luxon';
 import {FunctionComponent} from 'react';
-import {KommuneEvent, KommuneGroup} from "../types";
+import {KommuneEvent, KommuneGroup, KommuneName} from "../types";
 import tableStyles from "../styles/table.module.scss";
 import {convertLinkToFullFledged} from "../utils/link-validation-utils";
 import {useWindowSize} from "@react-hook/window-size";
@@ -13,6 +13,7 @@ import Linkify from "react-linkify";
 
 export interface KommuneGroupList {
     groups: KommuneGroup[]
+    kommuneName: KommuneName
 }
 
 export const KommuneGroupList: FunctionComponent<KommuneGroupList> = (props) => {
@@ -22,8 +23,10 @@ export const KommuneGroupList: FunctionComponent<KommuneGroupList> = (props) => 
     if (props.groups.length === 0) {
         return <div>
             Vi har pt. ikke information om nogle lokale grupper i din kommune.
-            Hvis du er med i en gruppe som ikke står her, eller du gerne vil være med til at starte en gruppe så kan
-            du <SignUpLink>tilmelde dig Klimabevægelsens Kampagnehold.</SignUpLink>
+            Er med i en gruppe som ikke står her, eller er du interesseret i at mødes i {props.kommuneName} kommune?
+            Skriv til os
+            på <a href="mailto:kontakt@klimabev.dk">kontakt@klimabev.dk</a> så sætter vi dig sammen med andre i
+            kommunen.
         </div>
     }
     return renderCards(props.groups);
