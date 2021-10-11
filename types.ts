@@ -111,6 +111,15 @@ export interface KommuneEvent {
     moreInfoLink: string,
 }
 
+export interface KommuneEventFromServer {
+    date: string,
+    time: string,
+    name: string,
+    kommune: KommuneName | GlobalEvent,
+    place: string,
+    moreInfoLink: string,
+}
+
 export interface KommuneGroup {
     person: string,
     groupName: string,
