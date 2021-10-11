@@ -1,32 +1,32 @@
-name: Build
-
-on:
-  push:
-    branches: main
-  pull_request:
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout main
-        uses: actions/checkout@v2
-
-      - name: Yarn install
-        run: |
-          yarn install
-
-      - name: Next build and export
-        run: |
-          yarn next build
-          yarn next export
-
-      - name: Remove jekyll processing
-        run: cd out && touch ".nojekyll"
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        if: ${{ github.event_name == 'push' }}
-        with:
-          branch: gh-pages
-          folder: out
+#name: Build
+#
+#on:
+#  push:
+#    branches: main
+#  pull_request:
+#
+#jobs:
+#  build-and-deploy:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout main
+#        uses: actions/checkout@v2
+#
+#      - name: Yarn install
+#        run: |
+#          yarn install
+#
+#      - name: Next build and export
+#        run: |
+#          yarn next build
+#          yarn next export
+#
+#      - name: Remove jekyll processing
+#        run: cd out && touch ".nojekyll"
+#
+#      - name: Deploy
+#        uses: JamesIves/github-pages-deploy-action@releases/v3
+#        if: ${{ github.event_name == 'push' }}
+#        with:
+#          branch: gh-pages
+#          folder: out
