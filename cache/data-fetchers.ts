@@ -17,7 +17,7 @@ export async function getGroups(): Promise<KommuneGroup[]> {
             person: gruppe["Kontakt"],
             groupName: gruppe["Gruppens navn"],
             //@ts-ignore // TODO fix when Klimabevægelsen update their sheet
-            kommune: gruppe.Kommune as KommuneName ?? "Lyngby-Taarbæk",
+            kommune: gruppe.Kommune as KommuneName,
             description: gruppe["Beskrivelse af gruppen"],
             meetings: gruppe["Mdefrekvens"],
             location: gruppe["Mdested"]

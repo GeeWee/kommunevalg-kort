@@ -54,6 +54,7 @@ export async function getEvents(): Promise<KommuneEvent[]>{
 
     console.log("Events", values.data)
 
+    // parse string to actual datetime object
     const transformed: KommuneEvent[] = values.data.map(event => ({
         ...event,
         date: DateTime.fromISO(event.date),
