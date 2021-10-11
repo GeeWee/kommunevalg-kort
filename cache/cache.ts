@@ -5,7 +5,7 @@ import {KommuneGroup, KommuneName} from "../types";
 import {getEvents, getGroups} from "./data-fetchers";
 
 
-export const queryCache = new NodeCache({stdTTL: 45}); // cache for 45 seconds
+export const queryCache = new NodeCache({stdTTL: 180}); // cache for 3 minutes
 
 console.log("THIS CODE IS RUN ONCE");
 
@@ -22,12 +22,12 @@ async function getAndAddEvents() {
 }
 
 // Refresh every minute.
-setTimeout(async () => {
+setInterval(async () => {
     await getAndAddGroups();
     await getAndAddEvents();
 }, 60_000)
 
-// Initial cache seeding
+// Initial cache seeding. Promises here are ignored.
 getAndAddGroups();
 getAndAddEvents();
 
